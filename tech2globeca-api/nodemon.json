@@ -1,0 +1,5 @@
+{
+  "watch": ["index.js", "validate.js", "turnstile.js", "lib"],
+  "ext": "js,json",
+  "ignore": ["node_modules"]
+}

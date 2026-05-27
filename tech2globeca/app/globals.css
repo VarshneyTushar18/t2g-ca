@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Ensure smooth continuous swiper animations */
+.client-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+/* Expertise Section Swiper Pagination */
+.expertise-swiper .swiper-pagination {
+  position: relative !important;
+  margin-top: 1rem;
+}
+
+.expertise-swiper .expertise-bullet {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #d1d5db;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.expertise-swiper .expertise-bullet-active {
+  background: #222222;
+}

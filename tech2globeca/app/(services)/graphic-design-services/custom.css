@@ -1,0 +1,386 @@
+.portfolioSection {
+    padding: 60px 20px;
+}
+
+.portfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.gridItem {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.gridItem:hover {
+    transform: translateY(-5px);
+}
+
+.portfolioImg {
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolioIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 15px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.portfolioImg:hover .portfolioIcon {
+    opacity: 1;
+}
+
+.portfolioIcon a {
+    width: 42px;
+    height: 42px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.portfolioIcon a:hover {
+    background: #000;
+    color: #fff;
+}
+
+figcaption {
+    padding: 18px;
+    text-align: center;
+}
+
+figcaption span {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+    .portfolioGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolioGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.hrline hr {
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #0000001a;
+    color: #0000001a;
+}
+
+.hrline svg {
+    width: 30px;
+}
+
+/* Step-By-Step Workflow Section Styles */
+.workflow-section {
+    position: relative;
+    padding: 90px 0;
+    background-image: url('/images/services/workflow-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    overflow: hidden;
+}
+
+/* Semi-transparent dark gradient overlay with warm crimson tint */
+.workflow-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.88) 0%, rgba(26, 1, 3, 0.92) 50%, rgba(0, 0, 0, 0.88) 100%);
+    z-index: 1;
+}
+
+.workflow-container {
+    position: relative;
+    z-index: 2;
+}
+
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.workflow-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 0px;
+    padding: 40px 30px;
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Accent top-glow line on hover */
+.workflow-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #c7010c, #ff3b47);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.workflow-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 25px rgba(199, 1, 12, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.workflow-card:hover::before {
+    opacity: 1;
+}
+
+.workflow-number {
+    font-size: 42px;
+    font-weight: 700;
+    color: #c7010c;
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+    transition: all 0.4s ease;
+    letter-spacing: -0.5px;
+}
+
+.workflow-card:hover .workflow-number {
+    color: #ff3b47;
+    transform: scale(1.08) translateX(2px);
+    text-shadow: 0 0 10px rgba(255, 59, 71, 0.35);
+}
+
+.workflow-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: -0.2px;
+}
+
+.workflow-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0;
+    font-weight: 400;
+    transition: color 0.4s ease;
+}
+
+.workflow-card:hover .workflow-desc {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Responsive breakpoints for custom grid */
+@media (max-width: 1024px) {
+    .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .workflow-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────
+   Bring Your Brand To Life – Brand Principles Section
+───────────────────────────────────────────────────────── */
+.brand-principles-section {
+    padding: 80px 0 80px;
+    position: relative;
+}
+
+/* ── Header ── */
+.brand-principles-header {
+    text-align: center;
+    margin-bottom: 56px;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-principles-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+    margin-bottom: 16px;
+}
+
+.brand-principles-accent-line {
+    width: 56px;
+    height: 3px;
+    background: linear-gradient(90deg, #c7010c, #ff3b47);
+    border-radius: 2px;
+    margin: 0 auto 18px;
+}
+
+.brand-principles-subtitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: #c7010c;
+    letter-spacing: 0.15px;
+}
+
+/* ── 3-column grid ── */
+.brand-principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Individual card ── */
+.bp-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 28px 24px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+}
+
+/* left accent bar */
+.bp-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #c7010c 0%, #ff3b47 100%);
+    border-radius: 12px 0 0 12px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.10), 0 4px 12px rgba(199, 1, 12, 0.08);
+    border-color: rgba(199, 1, 12, 0.18);
+}
+
+.bp-card:hover::before {
+    transform: scaleY(1);
+}
+
+/* ── Icon pill ── */
+.bp-card-icon {
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #fff0f1 0%, #ffe4e6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c7010c;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    border: 1px solid rgba(199, 1, 12, 0.12);
+}
+
+.bp-card:hover .bp-card-icon {
+    background: linear-gradient(135deg, #c7010c 0%, #e5030f 100%);
+    color: #ffffff;
+    transform: scale(1.08);
+    border-color: transparent;
+}
+
+/* ── Text block ── */
+.bp-card-body {
+    flex: 1;
+}
+
+.bp-card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    letter-spacing: -0.1px;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.bp-card:hover .bp-card-title {
+    color: #c7010c;
+}
+
+.bp-card-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #5a5a6e;
+    margin: 0;
+}
+
+/* ── Responsive breakpoints ── */
+@media (max-width: 1024px) {
+    .brand-principles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+}
+
+@media (max-width: 640px) {
+    .brand-principles-section {
+        padding: 60px 0 70px;
+    }
+
+    .brand-principles-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .bp-card {
+        padding: 22px 18px;
+    }
+}
