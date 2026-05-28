@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useCallback, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { FaChevronDown } from "react-icons/fa";
 import {
   validateContactPayload,
@@ -24,7 +25,9 @@ export default function ContactForm({
   variant = "faq",
   showCountry = false,
   source = "Website contact form",
+  successRedirect = "/thank-you",
 }) {
+  const router = useRouter();
   const [form, setForm] = useState(INITIAL_FORM);
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
@@ -165,6 +168,9 @@ export default function ContactForm({
         type: "success",
         message: "Thank you! Your message has been sent.",
       });
+      if (successRedirect) {
+        router.push(successRedirect);
+      }
     } catch (err) {
       setCaptchaToken("");
       turnstileRef.current?.reset();

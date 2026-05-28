@@ -10,7 +10,7 @@ export default function CTA() {
             href="mailto:info@tech2globe.ca"
             className="px-8 py-3 border-2 border-white text-white font-medium hover:bg-white hover:text-[#c7010c] transition-colors"
           >
-            SEND A MAIL
+            SEND AN EMAIL
           </a>
           <a
             href="tel:+1-516-858-5840"

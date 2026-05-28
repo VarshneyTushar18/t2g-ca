@@ -207,7 +207,7 @@ export default function DigitalMarketingOttawa() {
               href="mailto:info@tech2globe.ca"
               className="px-8 py-3 border-2 border-white text-white font-semibold tracking-wide hover:bg-white hover:text-[#c7010c] transition-colors duration-200"
             >
-              SEND A MAIL
+              SEND AN EMAIL
             </a>
             <a
               href="tel:+1-516-858-5840"

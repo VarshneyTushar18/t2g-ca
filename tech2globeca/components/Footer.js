@@ -41,12 +41,12 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-6 uppercase text-black">Services</h4>
           <ul className="flex flex-col gap-3 text-gray-600">
-            <li><a href="#" className="hover:text-[#c7010c] transition-colors">Digital Marketing</a></li>
-            <li><a href="#" className="hover:text-[#c7010c] transition-colors">UI/UX Design</a></li>
-            <li><a href="#" className="hover:text-[#c7010c] transition-colors">Medical Data Entry</a></li>
-            <li><a href="#" className="hover:text-[#c7010c] transition-colors">App Development</a></li>
-            <li><a href="#" className="hover:text-[#c7010c] transition-colors">Amazon Marketing</a></li>
-            <li><a href="#" className="hover:text-[#c7010c] transition-colors">Ecommerce Services</a></li>
+            <li><a href="/digital-marketing-agency" className="hover:text-[#c7010c] transition-colors">Digital Marketing</a></li>
+            <li><a href="/interactive-design-services" className="hover:text-[#c7010c] transition-colors">UI/UX Design</a></li>
+            <li><a href="/medical-data-entry-services" className="hover:text-[#c7010c] transition-colors">Medical Data Entry</a></li>
+            <li><a href="/mobile-app-development-services" className="hover:text-[#c7010c] transition-colors">App Development</a></li>
+            <li><a href="/amazon-marketing-services" className="hover:text-[#c7010c] transition-colors">Amazon Marketing</a></li>
+            <li><a href="/ecommerce-website-development" className="hover:text-[#c7010c] transition-colors">Ecommerce Services</a></li>
           </ul>
         </div>
 

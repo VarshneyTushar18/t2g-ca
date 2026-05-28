@@ -73,68 +73,35 @@ function buildTeamLeadHtml({
   location,
   senderIp,
   sourcePage,
-  formType,
 }) {
-  const submittedAt = new Date().toLocaleString("en-US", {
-    dateStyle: "medium",
-    timeStyle: "short",
-  });
-
-  const pageLink =
-    sourcePage && sourcePage !== "—"
-      ? `<a href="${escapeHtml(sourcePage)}">${escapeHtml(sourcePage)}</a>`
-      : "-";
-
-  const body = `
-    <h3 style="margin-bottom:15px;color:#222;">Contact Details</h3>
-    <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-    <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
-    <p><strong>Phone:</strong> ${escapeHtml(phone || "-")}</p>
-    <p><strong>Country:</strong> ${escapeHtml(country && country !== "—" ? country : "-")}</p>
-    <p><strong>Location:</strong> ${escapeHtml(location)}</p>
-    <p><strong>Sender IP:</strong> ${escapeHtml(senderIp)}</p>
-
-    <hr style="border:none;border-top:1px solid #e5e5e5;margin:25px 0;" />
-
-    <h3 style="margin-bottom:15px;color:#222;">Message</h3>
-    <p style="line-height:1.7;white-space:pre-wrap;">${escapeHtml(message || "-")}</p>
-
-    <hr style="border:none;border-top:1px solid #e5e5e5;margin:25px 0;" />
-
-    <h3 style="margin-bottom:15px;color:#222;">Additional Information</h3>
-    <p><strong>Source Page:</strong> ${pageLink}</p>
-    <p><strong>Form Type:</strong> ${escapeHtml(formType || "-")}</p>
-    <p><strong>Submitted At:</strong> ${escapeHtml(submittedAt)}</p>
+  return `
+    <html>
+      <head><title>Enquiry from Tech2Globe</title></head>
+      <body style="font-family:Arial, Helvetica, sans-serif;">
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Country Code:</strong> ${escapeHtml(country && country !== "—" ? country : "-")}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone || "-")}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Comment:</strong> ${escapeHtml(message || "-").replace(/\n/g, "<br>")}</p>
+        <p><strong>Sender IP:</strong> ${escapeHtml(senderIp || "-")}</p>
+        <p><strong>Location:</strong> ${escapeHtml(location || "Unknown")}</p>
+        <p><strong>Page:</strong> ${escapeHtml(sourcePage || "-")}</p>
+      </body>
+    </html>
   `;
-
-  return emailShell("New Lead Inquiry", body);
 }
 
 function buildUserConfirmationHtml({ name, email, phone, country }) {
-  const body = `
-    <p>Dear ${escapeHtml(name)},</p>
-    <p style="line-height:1.7;">
-      Thank you for reaching out to Tech2Globe.
-      We have received your inquiry successfully and our team will contact you shortly.
-    </p>
-
-    <hr style="border:none;border-top:1px solid #e5e5e5;margin:25px 0;" />
-
-    <h3 style="margin-bottom:15px;color:#222;">Your Submitted Details</h3>
-    <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-    <p><strong>Phone:</strong> ${escapeHtml(phone || "-")}</p>
-    <p><strong>Country:</strong> ${escapeHtml(country && country !== "—" ? country : "-")}</p>
-
-    <hr style="border:none;border-top:1px solid #e5e5e5;margin:25px 0;" />
-
-    <p>
-      Regards,<br />
-      <strong>Tech2Globe Team</strong>
-    </p>
+  return `
+    <html>
+      <head><title>Thank You</title></head>
+      <body style="font-family:Arial, Helvetica, sans-serif;">
+        <p>Dear ${escapeHtml(name)},</p>
+        <p>Thank you for your enquiry. Our team will get back to you within 1 business day.</p>
+        <p>Regards,<br>Tech2Globe Team</p>
+      </body>
+    </html>
   `;
-
-  return emailShell("Thank You for Contacting Us", body);
 }
 
 export async function sendLeadEmails({
@@ -168,20 +135,19 @@ export async function sendLeadEmails({
     from,
     to: leadEmails.join(","),
     replyTo: email,
-    subject: `New Lead Inquiry - ${name}`,
+    subject: "New Enquiry from Tech2Globe",
     html: teamHtml,
     text: [
-      `New Lead Inquiry`,
+      `New Enquiry from Tech2Globe`,
       ``,
       `Name: ${name}`,
-      `Email: ${email}`,
+      `Country Code: ${country || "-"}`,
       `Phone: ${phone || "-"}`,
-      `Country: ${country || "-"}`,
-      `Location: ${location}`,
+      `Email: ${email}`,
+      `Comment: ${message || "-"}`,
       `Sender IP: ${senderIp}`,
-      `Message: ${message || "-"}`,
-      `Source Page: ${sourcePage || "-"}`,
-      `Form Type: ${formType || "-"}`,
+      `Location: ${location}`,
+      `Page: ${sourcePage || "-"}`,
     ].join("\n"),
   });
 
@@ -190,9 +156,9 @@ export async function sendLeadEmails({
   const userMail = transport.sendMail({
     from,
     to: email,
-    subject: "Thank You for Contacting Tech2Globe",
+    subject: "Thank you for your enquiry!",
     html: userHtml,
-    text: `Dear ${name},\n\nThank you for contacting Tech2Globe. We have received your inquiry and will contact you shortly.\n\nRegards,\nTech2Globe Team`,
+    text: `Dear ${name},\n\nThank you for your enquiry. Our team will get back to you within 1 business day.\n\nRegards,\nTech2Globe Team`,
   });
 
   const [teamResult, userResult] = await Promise.allSettled([teamMail, userMail]);
