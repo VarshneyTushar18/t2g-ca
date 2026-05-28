@@ -1,19 +1,20 @@
 # Tech2Globe Contact API
 
-Standalone Node.js backend for contact forms (**email only — no database**):
+Standalone Node.js backend for contact forms with MySQL + email notifications:
 
+- **MySQL** — stores leads in `leads_tech2globeca` (`lib/db.js`)
 - **Nodemailer** — team notification + user thank-you email (`lib/mailer.js`)
 - Default recipients: `info@tech2globe.com`, `enquiries@tech2globe.net` (override with `LEAD_EMAILS`)
 - **Turnstile** — captcha verification
 - **Express** — REST API
 
-Submissions are **not** stored in MySQL or any database. Enquiries exist only in the inboxes above (and the auto-reply to the visitor).
+Submissions are stored in MySQL and then emailed to the enquiry inboxes.
 
 ## Setup
 
 ```bash
 cp .env.example .env
-# Edit .env with SMTP and Turnstile secret
+# Edit .env with SMTP, Turnstile, and MySQL values
 npm install
 npm run dev
 ```
