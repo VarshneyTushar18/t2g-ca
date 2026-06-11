@@ -87,25 +87,25 @@ export const metadata = {
 };
 
 const clientsData = [
-  { id: 1, name: 'Payoneer', logo: 'images/clients/Payoneer-Log.png' },
-  { id: 2, name: 'Shopify', logo: 'images/clients/shopify.png' },
-  { id: 3, name: 'ISO', logo: 'images/clients/iso.png' },
-  { id: 4, name: 'Certificate', logo: 'images/clients/certificate.png' },
-  { id: 5, name: 'MSME', logo: 'images/clients/msme.png' },
-  { id: 6, name: 'Google', logo: 'images/clients/google.png' },
+  { id: 1, name: 'Payoneer', logo: 'images/clients/Payoneer-Log.webp' },
+  { id: 2, name: 'Shopify', logo: 'images/clients/shopify.webp' },
+  { id: 3, name: 'ISO', logo: 'images/clients/iso.webp' },
+  { id: 4, name: 'Certificate', logo: 'images/clients/certificate.webp' },
+  { id: 5, name: 'MSME', logo: 'images/clients/msme.webp' },
+  { id: 6, name: 'Google', logo: 'images/clients/google.webp' },
 ];
 
 const clientsData2 = [
-  { id: 1, name: 'Abrams', logo: 'images/clients/abrams.png' },
-  { id: 2, name: 'Absolute Toner', logo: 'images/clients/absolute-toner-logo.png' },
-  { id: 3, name: 'Aniss', logo: 'images/clients/aniss-logo.png' },
-  { id: 4, name: 'Aon Hewitt', logo: 'images/clients/aonHewit.png' },
-  { id: 5, name: 'Aquatech', logo: 'images/clients/aquatech.png' },
-  { id: 6, name: 'Creative Arcades', logo: 'images/clients/creative-arcades.png' },
-  { id: 7, name: 'Follett', logo: 'images/clients/follett.png' },
-  { id: 8, name: 'GBS', logo: 'images/clients/gbs-logo.png' },
-  { id: 9, name: 'HP', logo: 'images/clients/hp.png' },
-  { id: 10, name: 'Wellist', logo: 'images/clients/wellist.png' },
+  { id: 1, name: 'Abrams', logo: 'images/clients/abrams.webp' },
+  { id: 2, name: 'Absolute Toner', logo: 'images/clients/absolute-toner-logo.webp' },
+  { id: 3, name: 'Aniss', logo: 'images/clients/aniss-logo.webp' },
+  { id: 4, name: 'Aon Hewitt', logo: 'images/clients/aonHewit.webp' },
+  { id: 5, name: 'Aquatech', logo: 'images/clients/aquatech.webp' },
+  { id: 6, name: 'Creative Arcades', logo: 'images/clients/creative-arcades.webp' },
+  { id: 7, name: 'Follett', logo: 'images/clients/follett.webp' },
+  { id: 8, name: 'GBS', logo: 'images/clients/gbs-logo.webp' },
+  { id: 9, name: 'HP', logo: 'images/clients/hp.webp' },
+  { id: 10, name: 'Wellist', logo: 'images/clients/wellist.webp' },
 ];
 
 

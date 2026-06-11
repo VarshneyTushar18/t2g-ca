@@ -43,7 +43,7 @@ const ExpertiseSection = ({ data }) => {
                     <img src={item.image} alt={item.title} className="w-full max-w-[500px] h-auto object-contain" />
                   ) : (
                     <div className="w-full max-w-[500px] aspect-[4/3] bg-gray-50 border border-gray-200 rounded-lg flex items-center justify-center shadow-sm">
-                      <span className="text-gray-400 font-medium">Add Image Here (e.g. /images/ecommerce.png)</span>
+                      <span className="text-gray-400 font-medium">Add Image Here (e.g. /images/ecommerce.webp)</span>
                     </div>
                   )}
                 </div>

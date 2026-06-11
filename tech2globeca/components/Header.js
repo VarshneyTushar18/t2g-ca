@@ -33,7 +33,7 @@ const servicesData = [
       { name: "SEO Agency Toronto", href: "/seo-agency-toronto", icon: <FaSearch className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "PPC Management", href: "/ppc-management-services", icon: <FaMousePointer className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Local Seo", href: "/local-seo-services", icon: <FaMapMarkerAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
-      { name: "Social Media Marketing", href: "/social-media-marketing-services", icon: <FaTwitter className="text-gray-400 mt-1 flex-shrink-0" /> },
+      { name: "Social Media Marketing", href: "/social-media-marketing-services-services", icon: <FaTwitter className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Influencer Marketing", href: "/influencer-marketing-services", icon: <FaBullhorn className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Content Marketing", href: "/content-marketing-services", icon: <FaPen className="text-gray-400 mt-1 flex-shrink-0" /> },
     ]
@@ -72,7 +72,7 @@ const servicesData = [
     links: [
       { name: "Amazon Marketing", href: "/amazon-marketing-services", icon: <FaCommentAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Amazon Consulting", href: "/amazon-consulting-services", icon: <FaCommentAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
-      { name: "Amazon FBA Consulting", href: "/amazon-fba-consulting-services", icon: <FaUser className="text-gray-400 mt-1 flex-shrink-0" /> },
+      { name: "Amazon FBA Consulting", href: "/amazon-fba-consulting-services-services", icon: <FaUser className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Amazon Seo Consultant", href: "/amazon-seo-consultant", icon: <FaSearch className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Amazon Ad Management", href: "/amazon-advertising-management", icon: <FaAd className="text-gray-400 mt-1 flex-shrink-0" /> },
     ]
@@ -80,7 +80,7 @@ const servicesData = [
   {
     title: "ECOMMERCE SOLUTIONS",
     links: [
-      { name: "Ecommerce Web Development", href: "/ecommerce-web-development", icon: <FaShoppingCart className="text-gray-400 mt-1 flex-shrink-0" /> },
+      { name: "Ecommerce Web Development", href: "/ecommerce-website-development", icon: <FaShoppingCart className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Magento Development", href: "/magento-development-services", icon: <FaShoppingCart className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Shopify Development", href: "/shopify-development-services", icon: <FaShoppingCart className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "WooCommerce Development", href: "/woocommerce-development-company-in-toronto", icon: <FaShoppingCart className="text-gray-400 mt-1 flex-shrink-0" /> },
@@ -121,7 +121,7 @@ export default function Header() {
           <div className="flex items-center gap-2">
             <a href="/">
               <Image
-                src="/images/tech2globe-logo.png"
+                src="/images/tech2globe-logo.webp"
                 alt="Tech2Globe Logo"
                 width={340}
                 height={168}

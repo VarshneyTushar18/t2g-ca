@@ -60,7 +60,7 @@ export const metadata = {
       "Tech2Globe Canada: Multi-Function IT Outsourcing Services",
     images: [
       {
-        url: "https://tech2globe.ca/images/logo.png",
+        url: "https://tech2globe.ca/images/logo.webp",
       },
     ],
     locale: "en_US",
@@ -72,7 +72,7 @@ export const metadata = {
       "Tech2Globe: Online Marketing | Ecommerce & IT Consulting | BPO/KPO",
     description:
       "Tech2Globe is Web Portal & Software Development Company...",
-    images: ["https://tech2globe.ca/images/tech2globe.jpg"],
+    images: ["https://tech2globe.ca/images/tech2globe.webp"],
   },
 };
 
@@ -82,7 +82,7 @@ const expertiseData = [
     title: "Mobile App Development Specialists",
     description:
       "Helping businesses around the world with the precision of human intelligence and the strength of automation. We are a trusted name in the mobile app development options available all across!",
-    image: "/images/Mobile-App.jpg",
+    image: "/images/Mobile-App.webp",
     list: [
       "5000+ successful project deliveries with almost 100% client retention.",
       "We have brought in the best mobile app developers for each of our projects.",
@@ -97,7 +97,7 @@ const expertiseData = [
     title: "Digital Marketing Specialists",
     description:
       "Being the best digital marketing agency Toronto, we believe in embracing the digital era and staying ahead of all trends. We employ revolutionary tactics to help your brand and business develop digitally.",
-    image: "/images/Digital-Marketing.jpg",
+    image: "/images/Digital-Marketing.webp",
     list: [
       "We have delivered over 7000+ successful projects.",
       "Not only during the project but also we offer tracking reports post completion.",
@@ -112,7 +112,7 @@ const expertiseData = [
     title: "Ecommerce Services Expertise",
     description:
       "We look forward to assisting you on the path to success with our best ecommerce solutions for the optimization of your store and better journey of your websites.",
-    image: "/images/Ecommerce-Development.jpg",
+    image: "/images/Ecommerce-Development.webp",
     list: [
       "Our certified developers and ecommerce consultants onboard have years of industry experience.",
       "We helped over thousands of businesses improve their stalled functioning.",
@@ -127,7 +127,7 @@ const expertiseData = [
     title: "Web Development Solutions",
     description:
       "We have imaginative, experimental, and inventive minds and that's how we create quite amazing web designs. We are on a mission to deliver results that not only fits search engines but also human minds.",
-    image: "/images/Web-Development.jpg",
+    image: "/images/Web-Development.webp",
     list: [
       "We helped over 1000+ websites rank up in search engine results.",
       "Our top notch graphics helped our clients to entice their new customers.",
@@ -142,7 +142,7 @@ const expertiseData = [
     title: "Data Entry Expertise",
     description:
       "We provide data support to businesses that encourage organisational growth. We have a global customer base with over 96% customer retention rate for an offshore data entry business.",
-    image: "/images/data-entry.png",
+    image: "/images/data-entry.webp",
     list: [
       "Medical data entry services have increased productivity and profitability.",
       "Accurate and high-quality data entry services with utmost precision.",
@@ -155,16 +155,16 @@ const expertiseData = [
 ];
 
 const clientsData = [
-  { id: 1, name: 'Abrams', logo: 'images/clients/abrams.png' },
-  { id: 2, name: 'Absolute Toner', logo: 'images/clients/absolute-toner-logo.png' },
-  { id: 3, name: 'Aniss', logo: 'images/clients/aniss-logo.png' },
-  { id: 4, name: 'Aon Hewitt', logo: 'images/clients/aonHewit.png' },
-  { id: 5, name: 'Aquatech', logo: 'images/clients/aquatech.png' },
-  { id: 6, name: 'Creative Arcades', logo: 'images/clients/creative-arcades.png' },
-  { id: 7, name: 'Follett', logo: 'images/clients/follett.png' },
-  { id: 8, name: 'GBS', logo: 'images/clients/gbs-logo.png' },
-  { id: 9, name: 'HP', logo: 'images/clients/hp.png' },
-  { id: 10, name: 'Wellist', logo: 'images/clients/wellist.png' },
+  { id: 1, name: 'Abrams', logo: 'images/clients/abrams.webp' },
+  { id: 2, name: 'Absolute Toner', logo: 'images/clients/absolute-toner-logo.webp' },
+  { id: 3, name: 'Aniss', logo: 'images/clients/aniss-logo.webp' },
+  { id: 4, name: 'Aon Hewitt', logo: 'images/clients/aonHewit.webp' },
+  { id: 5, name: 'Aquatech', logo: 'images/clients/aquatech.webp' },
+  { id: 6, name: 'Creative Arcades', logo: 'images/clients/creative-arcades.webp' },
+  { id: 7, name: 'Follett', logo: 'images/clients/follett.webp' },
+  { id: 8, name: 'GBS', logo: 'images/clients/gbs-logo.webp' },
+  { id: 9, name: 'HP', logo: 'images/clients/hp.webp' },
+  { id: 10, name: 'Wellist', logo: 'images/clients/wellist.webp' },
 ];
 
 const stats = [
@@ -295,10 +295,10 @@ const featuredServicesData = [
     title: "360° Digital Marketing Services",
     items: [
       { name: "Hire Digital Marketing Agency Canada", link: "/digital-marketing-agency" },
-      { name: "Best SEO Agency Toronto", link: "/search-engine-optimization" },
+      { name: "Best SEO Agency Toronto", link: "/seo-agency-toronto" },
       { name: "PPC Management Services", link: "/ppc-management-services" },
       { name: "Professional Local Seo Services", link: "/local-seo-services" },
-      { name: "Affordable Social Media Marketing", link: "/social-media-marketing" }
+      { name: "Affordable Social Media Marketing", link: "/social-media-marketing-services" }
     ],
     bgColor: "bg-[#e5e5e5]",
     textColor: "text-[#222222]",
@@ -309,9 +309,9 @@ const featuredServicesData = [
     title: "Amazon Store and Setup Services",
     items: [
       { name: "Amazon Marketing Services Toronto", link: "/amazon-marketing-services" },
-      { name: "Amazon Consultancy Services", link: "/amazon-consultancy-services" },
-      { name: "Amazon FBA Consulting Services", link: "/amazon-fba-consulting" },
-      { name: "Hire Amazon SEO Consultant", link: "/hire-amazon-seo-consultant" },
+      { name: "Amazon Consultancy Services", link: "/amazon-consulting-services" },
+      { name: "Amazon FBA Consulting Services", link: "/amazon-fba-consulting-services" },
+      { name: "Hire Amazon SEO Consultant", link: "/amazon-seo-consultant" },
       { name: "Amazon Advertising Management", link: "/amazon-advertising-management" }
     ],
     bgColor: "bg-[#c7010c]",
@@ -323,10 +323,10 @@ const featuredServicesData = [
     title: "Outsource Data Management Services",
     items: [
       { name: "Medical Data Entry Services", link: "/medical-data-entry-services" },
-      { name: "Restaurant Data Menu Entry", link: "/restaurant-data-entry-services" },
-      { name: "Product data entry services Mississauga", link: "/product-data-entry-services" },
-      { name: "Get Professional B2B Lead Generation", link: "/b2b-lead-generation-services" },
-      { name: "Certified Translation Services", link: "/translation-services" }
+      { name: "Restaurant Data Menu Entry", link: "/restaurant-menu-data-entry-services" },
+      // { name: "Product data entry services Mississauga", link: "/product-data-entry-services" },
+      // { name: "Get Professional B2B Lead Generation", link: "/b2b-lead-generation-services" },
+      // { name: "Certified Translation Services", link: "/translation-services" }
     ],
     bgColor: "bg-[#e5e5e5]",
     textColor: "text-[#222222]",
@@ -383,7 +383,7 @@ export default async function Home() {
 
         <div className="absolute inset-0">
           <img
-            src="images/Banner-Tech2Globe.jpg"
+            src="images/Banner-Tech2Globe.webp"
             alt="IT Solutions Banner"
             className="w-full h-full object-cover object-center"
           />
@@ -499,7 +499,7 @@ export default async function Home() {
             {/* Image */}
             <div className="relative w-full h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px]">
               <Image
-                src="/images/small-banner-home2.jpg" // replace with your actual image
+                src="/images/small-banner-home2.webp" // replace with your actual image
                 alt="Top Online Marketing And Web Development Agency In Toronto"
                 fill
                 className="object-cover"
@@ -530,7 +530,7 @@ export default async function Home() {
             {/* Image 1 */}
             <div className="flex items-center justify-center">
               <img
-                src="/images/google-5-star.png"
+                src="/images/google-5-star.webp"
                 alt="Google Rating"
                 className="w-auto h-auto object-contain max-h-[64px] sm:max-h-[72px] md:max-h-[80px]"
               />
@@ -539,7 +539,7 @@ export default async function Home() {
             {/* Image 2 */}
             <div className="flex items-center justify-center">
               <img
-                src="/images/clutch-5-star.png"
+                src="/images/clutch-5-star.webp"
                 alt="Clutch Rating"
                 className="w-auto h-auto object-contain max-h-[64px] sm:max-h-[72px] md:max-h-[80px]"
               />
@@ -548,7 +548,7 @@ export default async function Home() {
             {/* Image 3 */}
             <div className="flex items-center justify-center">
               <img
-                src="/images/upcity-5-star.png"
+                src="/images/upcity-5-star.webp"
                 alt="UpCity Rating"
                 className="w-auto h-auto object-contain max-h-[64px] sm:max-h-[72px] md:max-h-[80px]"
               />
@@ -586,7 +586,7 @@ export default async function Home() {
                   transition-transform duration-300 ease-out
                   group-hover:-translate-y-[105%] z-20">
                 <img
-                  src="/images/harpreet-singh-sethi.jpg"
+                  src="/images/harpreet-singh-sethi.webp"
                   alt="Harpreet Singh Sethi"
                   className="w-full h-full object-cover rounded-full 
                  shadow-md transform-gpu
@@ -902,7 +902,7 @@ export default async function Home() {
 
             {/* Proficient Team */}
             <div className="flex flex-col items-center text-center">
-              <Image src="/images/Feature-1.png" alt="Trust Pilot" width={343} height={384} />
+              <Image src="/images/Feature-1.webp" alt="Trust Pilot" width={343} height={384} />
             </div>
 
             <div className="flex flex-col items-center text-center">
@@ -917,7 +917,7 @@ export default async function Home() {
 
             {/* Industry Experience */}
             <div className="flex flex-col items-center text-center">
-              <Image src="/images/Feature-3.png" alt="Trust Pilot" width={343} height={384} />
+              <Image src="/images/Feature-3.webp" alt="Trust Pilot" width={343} height={384} />
             </div>
 
           </div>

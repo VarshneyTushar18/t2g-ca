@@ -186,7 +186,7 @@ export default function AmazonFbaConsultingServices() {
           { label: "Home", href: "/" },
           { label: "Services", href: "#" },
           {
-            label: "Amazon Fba Consulting Services", href: "/amazon-fba-consulting-services"
+            label: "Amazon Fba Consulting Services", href: "/amazon-fba-consulting-services-services"
           }
         ]}
       />
@@ -237,7 +237,7 @@ export default function AmazonFbaConsultingServices() {
 
             {/* RIGHT – Image (50%) */}
             <div className="w-full lg:w-1/2 relative">
-              <img src="/images/services/services-classic-07.jpg" alt="Benefits That You Can Leverage" className="object-cover" />
+              <img src="/images/services/services-classic-07.webp" alt="Benefits That You Can Leverage" className="object-cover" />
             </div>
 
             {/* LEFT – Content (50%) */}

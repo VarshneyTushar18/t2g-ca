@@ -52,6 +52,8 @@ import {
   FiUserPlus,
   FiAlertCircle,
   FiClock,
+  FiCheckCircle,
+  FiZap,
 } from "react-icons/fi";
 
 import { FaSmile, FaLayerGroup, FaGlobe, FaComments, FaHandshake, FaSearch, FaShareAlt, FaHeartbeat, FaBus, FaStore, FaPlane, FaUtensils, FaCheck, FaStickyNote } from "react-icons/fa";
@@ -141,31 +143,59 @@ const faqsData = [
 const servicesData = [
   {
     id: 1,
-    title: "Ensuring the Continuity of Business",
+    title: "Cost Savings",
     description:
-      "Migrating customer data is essential for maintaining the continuity of your business. If you are switching to a new system or platform, or merging with another company, you will need to ensure that your customer data is transferred accurately so that you can continue to serve your customers without any disruption.",
-    icon: <FiRefreshCw size={32} color="#ffffff" />,
+      "Outsourcing can be more cost-effective than hiring in-house staff to handle these tasks. You'll save money on salary, benefits, and training costs.",
+    icon: <FiDollarSign size={32} color="#ffffff" />,
   },
   {
     id: 2,
-    title: "Protecting Customer Data",
+    title: "Time Savings",
     description:
-      "Database migration service is also important for protecting sensitive information, such as payment details and personal information. A professional data migration service can ensure that this data is transferred securely and in compliance with relevant regulations.",
-    icon: <FiShield size={32} color="#ffffff" />,
+      "Outsourcing allows you to focus on your core business functions while experts handle the data entry, freeing time for other important tasks.",
+    icon: <FiClock size={32} color="#ffffff" />,
   },
   {
     id: 3,
-    title: "Reducing the Risk of Errors",
+    title: "Accuracy",
     description:
-      "Migrating customer data manually can be time-consuming and prone to errors. Using a professional service can help reduce the risk of errors, as our team has the necessary tools and expertise to ensure that the data is transferred accurately.",
-    icon: <FiAlertCircle size={32} color="#ffffff" />,
+      "Financial and accounting data entry requires high accuracy and attention to detail. Professionals ensure data is entered accurately and efficiently.",
+    icon: <FiCheckCircle size={32} color="#ffffff" />,
   },
   {
     id: 4,
-    title: "Saving Time and Resources",
+    title: "Improved Efficiency",
     description:
-      "Migrating customer data can be a complex and time-consuming process, especially if you are dealing with large amounts of data.",
-    icon: <FiClock size={32} color="#ffffff" />,
+      "Professional financial data entry services use efficient tools and processes to improve your business operations.",
+    icon: <FiTrendingUp size={32} color="#ffffff" />,
+  },
+  {
+    id: 5,
+    title: "Expertise",
+    description:
+      "Gain access to experienced professionals knowledgeable in accounting and financial data entry services.",
+    icon: <FiUsers size={32} color="#ffffff" />,
+  },
+  {
+    id: 6,
+    title: "Increased Efficiency",
+    description:
+      "Outsourcing lets you focus on core competencies while experts manage data entry quickly and accurately.",
+    icon: <FiZap size={32} color="#ffffff" />,
+  },
+  {
+    id: 7,
+    title: "Access to Specialised Skills",
+    description:
+      "Work with skilled professionals who can handle complex financial and accounting data entry tasks.",
+    icon: <FiTool size={32} color="#ffffff" />,
+  },
+  {
+    id: 8,
+    title: "Scalability",
+    description:
+      "Scale financial and accounting data entry operations based on business needs while improving cost efficiency.",
+    icon: <FiBarChart2 size={32} color="#ffffff" />,
   },
 ];
 
@@ -173,52 +203,66 @@ const servicesData = [
 const servicesData2 = [
   {
     id: 1,
-    title: "Upgrading to a new system",
+    title: "Access to bank statements",
     description:
-      "One common reason for customer data migration is when an organisation upgrades to a new system. This could be a new customer relationship management (CRM) system, a new database, or a new software application. In these cases, customer data needs to be transferred from the old system to the new one to ensure that the organisation can access accurate and up-to-date customer data.​",
+      "​",
     icon: '',
   },
   {
     id: 2,
-    title: "Consolidating data from multiple sources",
+    title: "Access to all purchase, sales and expense invoices",
     description:
-      "Another situation in which database migration service may be necessary is when an organisation consolidates data from various sources into a single database. This could result from a merger, acquisition, or simply a desire to streamline the organisation's data management processes. Customer data needs to be transferred from multiple sources into a centralised database in these cases.​",
+      "​",
     icon: '',
   },
   {
     id: 3,
-    title: "Migrating to the cloud",
+    title: "Last available balance sheet and Income statement",
     description:
-      "Some organisations may choose to relocate their customer data to the cloud to take advantage of the scalability and flexibility of cloud-based solutions. In these cases, customer data must be transferred from an on-premises system to a cloud-based one.",
+      "",
     icon: '',
   },
   {
     id: 4,
-    title: "Changing data storage platforms",
+    title: "Back-up/access to accounting software",
     description:
-      "Sometimes, an organisation may switch to a new data storage platform, such as moving from a traditional database to a data lake or data warehouse. In these situations, database migration service may be necessary to transfer the data from the old platform to the new one.",
+      "",
+    icon: '',
+  },
+  {
+    id: 5,
+    title: "Access to GST Portal",
+    description:
+      "",
+    icon: '',
+  },
+  {
+    id: 6,
+    title: "Any other relevant information required to do accounting",
+    description:
+      "",
     icon: '',
   },
 ];
 
 const clientsData = [
-  { id: 1, name: 'Abrams', logo: 'images/clients/abrams.png' },
-  { id: 2, name: 'Absolute Toner', logo: 'images/clients/absolute-toner-logo.png' },
-  { id: 3, name: 'Aniss', logo: 'images/clients/aniss-logo.png' },
-  { id: 4, name: 'Aon Hewitt', logo: 'images/clients/aonHewit.png' },
-  { id: 5, name: 'Aquatech', logo: 'images/clients/aquatech.png' },
-  { id: 6, name: 'Creative Arcades', logo: 'images/clients/creative-arcades.png' },
-  { id: 7, name: 'Follett', logo: 'images/clients/follett.png' },
-  { id: 8, name: 'GBS', logo: 'images/clients/gbs-logo.png' },
-  { id: 9, name: 'HP', logo: 'images/clients/hp.png' },
-  { id: 10, name: 'Wellist', logo: 'images/clients/wellist.png' },
+  { id: 1, name: 'Abrams', logo: 'images/clients/abrams.webp' },
+  { id: 2, name: 'Absolute Toner', logo: 'images/clients/absolute-toner-logo.webp' },
+  { id: 3, name: 'Aniss', logo: 'images/clients/aniss-logo.webp' },
+  { id: 4, name: 'Aon Hewitt', logo: 'images/clients/aonHewit.webp' },
+  { id: 5, name: 'Aquatech', logo: 'images/clients/aquatech.webp' },
+  { id: 6, name: 'Creative Arcades', logo: 'images/clients/creative-arcades.webp' },
+  { id: 7, name: 'Follett', logo: 'images/clients/follett.webp' },
+  { id: 8, name: 'GBS', logo: 'images/clients/gbs-logo.webp' },
+  { id: 9, name: 'HP', logo: 'images/clients/hp.webp' },
+  { id: 10, name: 'Wellist', logo: 'images/clients/wellist.webp' },
 ];
 
 const clientsData3 = [
-  { id: 1, name: 'Good Firm', logo: 'images/clients/good-firm.png' },
-  { id: 2, name: 'Clutch', logo: 'images/clients/clutch-2021.png' },
-  { id: 3, name: 'Clutch', logo: 'images/clients/clutch-2021-1.png' },
-  { id: 4, name: 'Clutch', logo: 'images/clients/clutch-2021-2.png' },
+  { id: 1, name: 'Good Firm', logo: 'images/clients/good-firm.webp' },
+  { id: 2, name: 'Clutch', logo: 'images/clients/clutch-2021.webp' },
+  { id: 3, name: 'Clutch', logo: 'images/clients/clutch-2021-1.webp' },
+  { id: 4, name: 'Clutch', logo: 'images/clients/clutch-2021-2.webp' },
 ];
 
 
@@ -374,18 +418,7 @@ export default function FinancialAccounting() {
       </section>
 
 
-      <section className="py-16 bg-[#f7f7f7] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-[#222222] mb-4">
-              Why Is Customer Data Migration Service Important For Your Business?
-            </h2>
-            <div className="w-24 h-[2px] bg-[#c7010c] mx-auto mb-4"></div>
-            <p>Using a professional service can save you time and resources, we will handle the entire process for you!</p>
-          </div>
-          <ServiceCards services={servicesData} columns={2} />
-        </div>
-      </section>
+
 
       <section className="py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -491,18 +524,7 @@ export default function FinancialAccounting() {
       </section>
 
 
-      <section className="py-16 bg-[#0000001a] overflow-hidden servicestwo">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-[#222222] mb-4">
-              When Are Customer Data Migration Services Necessary?
-            </h2>
-            <div className="w-24 h-[2px] bg-[#c7010c] mx-auto mb-4"></div>
-            <p>Maximise efficiency and minimise disruption with our comprehensive customer data migration services!</p>
-          </div>
-          <ServiceCards services={servicesData2} columns={2} />
-        </div>
-      </section>
+
 
       <section className="py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center gap-10">
@@ -546,54 +568,84 @@ export default function FinancialAccounting() {
         </div>
       </section>
 
+      <section className="py-16 bg-[#f7f7f7] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-semibold text-[#222222] mb-4">
+              Benefits Of Outsourcing Financial And Accounting Data Entry Services
+            </h2>
+            <div className="w-24 h-[2px] bg-[#c7010c] mx-auto mb-4"></div>
+            <p>There are several benefits to outsourcing your financial and accounting data entry tasks to a professional service like Tech2Globe:</p>
+          </div>
+          <ServiceCards services={servicesData} columns={3} />
+        </div>
+      </section>
+
       <section className="workflow-section">
         <div className="workflow-overlay"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 workflow-container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
-              We Will Ensure That The Database Migration Services Process<br />
-              Is Built With Availability, Security, And Dependability
+              Process For Accounting Data Entry Services Toronto
             </h2>
             <div className="w-24 h-[2px] bg-[#c7010c] mx-auto mb-6"></div>
             <p className="text-gray-300 max-w-3xl mx-auto leading-relaxed text-[15px] md:text-[16px]">
-              Transform your customer data migration process into a strategic advantage with our expertise!
+              That Will Take Your Financial Management To The Next Level
             </p>
           </div>
 
-
-          <div className="workflow-grid for-datamigration">
+          <div className="workflow-grid">
             <div className="workflow-card">
               <span className="workflow-number">01.</span>
-              <h3 className="workflow-title">Recognizing the purpose of your data</h3>
+              <h3 className="workflow-title">Initial Discussion</h3>
               <p className="workflow-desc">
-                We'll examine the information environment to determine how and where you use your data, as well as who uses it. We'll also see if the data should be used differently in the future.
+                We begin by having a detailed discussion with our clients to understand their business, the frequency of their accounting needs, the scope of the accounting data entry services Toronto required, and any backlog of accounting work. We also discuss the selection of accounting software. This step helps us to fully understand our clients' needs and set up the processes accordingly.
               </p>
             </div>
 
             <div className="workflow-card">
               <span className="workflow-number">02.</span>
-              <h3 className="workflow-title">Ensure data accuracy (especially in legit systems)</h3>
+              <h3 className="workflow-title">Scoping and Quotation</h3>
               <p className="workflow-desc">
-                We'll do a thorough quality assessment with our data migration services to ensure that your users are serviced both now and in the future.
+                After the initial discussion, our team will brainstorm and design a proper process that meets our clients' needs. We will then share the scope and quotation with them for approval, to ensure that there is no communication gap.
               </p>
             </div>
 
             <div className="workflow-card">
               <span className="workflow-number">03.</span>
-              <h3 className="workflow-title">Validation is still continuing</h3>
+              <h3 className="workflow-title">Information Gathering</h3>
               <p className="workflow-desc">
-                Making changes after migration can be expensive. As a result, while migrating data from one system to another, we'll produce a visual prototype of the new approach to ensure that the data is used exactly as you planned; changes can be done at any moment.
+                Once the scope and quotation have been agreed upon, we will gather all necessary information, such as bank statements and invoices, to begin the accounting process. We will also set up accounting software, such as Tally or Zoho, and gather GST login credentials. Our team will analyse the information and communicate with our clients on the expected date for the next communication.
               </p>
             </div>
 
             <div className="workflow-card">
               <span className="workflow-number">04.</span>
-              <h3 className="workflow-title">Testing with end users</h3>
+              <h3 className="workflow-title">Client Discussion</h3>
               <p className="workflow-desc">
-                We like to share the prototype with your end-users for a User Acceptance Test (UAT), the final migration, to verify it meets the criteria and validates it.
+                Our team will have further discussion with clients or their team members as needed to clarify any transactions requiring more information. We work as a team to finalise the accounts.
+              </p>
+            </div>
+            <div className="workflow-card">
+              <span className="workflow-number">05.</span>
+              <h3 className="workflow-title">Finalising Accounts</h3>
+              <p className="workflow-desc">
+                After incorporating any necessary changes, the final accounts will be shared with our clients for their business decision-making. They can view their accounts on a mobile app, making their accounting database easily accessible from anywhere.
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-[#0000001a] overflow-hidden servicestwo">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-semibold text-[#222222] mb-4">
+              Documents You’ll Need For Accounting Data Entry Services:
+            </h2>
+            <div className="w-24 h-[2px] bg-[#c7010c] mx-auto mb-4"></div>
+          </div>
+          <ServiceCards services={servicesData2} columns={3} />
         </div>
       </section>
 

@@ -26,7 +26,7 @@ export default function ContactUs() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {/* Card 1 */}
             <div className="bg-white border border-gray-100 p-8 flex flex-col items-center text-center shadow-[0_0_15px_rgba(0,0,0,0.05)] hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] transition-shadow duration-300">
-              <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" className="w-8 h-auto mb-5 border border-gray-100" />
+              <img src="https://flagcdn.com/w40/ca.webp" alt="Canada Flag" className="w-8 h-auto mb-5 border border-gray-100" />
               <h3 className="text-[17px] font-semibold text-gray-800 mb-3 uppercase tracking-wide">Canada</h3>
               <p className="text-gray-500 mb-6 text-[15px] leading-relaxed">
                 975 Mid-Way Blvd UNIT 12,<br />
@@ -40,7 +40,7 @@ export default function ContactUs() {
 
             {/* Card 2 */}
             <div className="bg-white border border-gray-100 p-8 flex flex-col items-center text-center shadow-[0_0_15px_rgba(0,0,0,0.05)] hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] transition-shadow duration-300">
-              <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" className="w-8 h-auto mb-5 border border-gray-100" />
+              <img src="https://flagcdn.com/w40/ca.webp" alt="Canada Flag" className="w-8 h-auto mb-5 border border-gray-100" />
               <h3 className="text-[17px] font-semibold text-gray-800 mb-3 uppercase tracking-wide">Canada</h3>
               <p className="text-gray-500 mb-6 text-[15px] leading-relaxed">
                 3620 3rd Avenue,<br />
@@ -54,7 +54,7 @@ export default function ContactUs() {
 
             {/* Card 3 */}
             <div className="bg-white border border-gray-100 p-8 flex flex-col items-center text-center shadow-[0_0_15px_rgba(0,0,0,0.05)] hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] transition-shadow duration-300">
-              <img src="https://flagcdn.com/w40/us.png" alt="USA Flag" className="w-8 h-auto mb-5 border border-gray-100" />
+              <img src="https://flagcdn.com/w40/us.webp" alt="USA Flag" className="w-8 h-auto mb-5 border border-gray-100" />
               <h3 className="text-[17px] font-semibold text-gray-800 mb-3 uppercase tracking-wide">USA</h3>
               <p className="text-gray-500 mb-6 text-[15px] leading-relaxed">
                 1538, Old Country Road,<br />

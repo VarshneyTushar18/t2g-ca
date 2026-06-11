@@ -38,7 +38,7 @@ import ClientSlider from "@/components/ClientSlider";
 
 
 // ✅ Change this image path to update the banner for this page only
-const bannerImage = "/images/innerbanner/app-development-banner.png";
+const bannerImage = "/images/innerbanner/app-development-banner.webp";
 
 export const metadata = {
   title: "iPhone App Development Company @Craft Your App Vision",
@@ -68,16 +68,16 @@ export const metadata = {
 };
 
 const clientsData = [
-  { id: 1, name: 'Abrams', logo: 'images/clients/abrams.png' },
-  { id: 2, name: 'Absolute Toner', logo: 'images/clients/absolute-toner-logo.png' },
-  { id: 3, name: 'Aniss', logo: 'images/clients/aniss-logo.png' },
-  { id: 4, name: 'Aon Hewitt', logo: 'images/clients/aonHewit.png' },
-  { id: 5, name: 'Aquatech', logo: 'images/clients/aquatech.png' },
-  { id: 6, name: 'Creative Arcades', logo: 'images/clients/creative-arcades.png' },
-  { id: 7, name: 'Follett', logo: 'images/clients/follett.png' },
-  { id: 8, name: 'GBS', logo: 'images/clients/gbs-logo.png' },
-  { id: 9, name: 'HP', logo: 'images/clients/hp.png' },
-  { id: 10, name: 'Wellist', logo: 'images/clients/wellist.png' },
+  { id: 1, name: 'Abrams', logo: 'images/clients/abrams.webp' },
+  { id: 2, name: 'Absolute Toner', logo: 'images/clients/absolute-toner-logo.webp' },
+  { id: 3, name: 'Aniss', logo: 'images/clients/aniss-logo.webp' },
+  { id: 4, name: 'Aon Hewitt', logo: 'images/clients/aonHewit.webp' },
+  { id: 5, name: 'Aquatech', logo: 'images/clients/aquatech.webp' },
+  { id: 6, name: 'Creative Arcades', logo: 'images/clients/creative-arcades.webp' },
+  { id: 7, name: 'Follett', logo: 'images/clients/follett.webp' },
+  { id: 8, name: 'GBS', logo: 'images/clients/gbs-logo.webp' },
+  { id: 9, name: 'HP', logo: 'images/clients/hp.webp' },
+  { id: 10, name: 'Wellist', logo: 'images/clients/wellist.webp' },
 ];
 
 const faqsData = [
@@ -181,7 +181,7 @@ const servicesData = [
 
 
 const introData = {
-  image: "/images/iphone-app-devopment.png",
+  image: "/images/iphone-app-devopment.webp",
   imageAlt: "iPhone App Development Company",
   heading: "About Our iPhone App Development Company",
   paragraphs: [

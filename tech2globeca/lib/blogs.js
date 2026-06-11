@@ -61,7 +61,7 @@ export function formatBlogAuthor(authorName) {
 }
 
 export function getBlogImage(blog) {
-  return blog.featuredImage || "/images/Banner-Tech2Globe.jpg";
+  return blog.featuredImage || "/images/Banner-Tech2Globe.webp";
 }
 
 export async function getBlogCategories() {

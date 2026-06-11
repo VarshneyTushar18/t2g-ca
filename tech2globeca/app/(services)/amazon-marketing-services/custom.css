@@ -103,7 +103,7 @@ figcaption span {
 .workflow-section {
     position: relative;
     padding: 70px 0;
-    background-image: url('/images/services/workflow-bg.png');
+    background-image: url('/images/services/workflow-bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -13,7 +13,7 @@ export default function ConsultancySlider({
   title = "Why Would You Seek Amazon Consultancy Services?",
   subtitle = "Without leveraging Amazon consultancy services, there might be chances to miss on the aspects that are important for a seller to be aware of.",
   slides = [],
-  imageSrc = "/images/services/parallax-bg8.jpg",
+  imageSrc = "/images/services/parallax-bg8.webp",
   imageAlt = "Consultancy Services"
 }) {
   return (

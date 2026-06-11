@@ -17,7 +17,7 @@ export default function Footer() {
         {/* Column 1: About & Social */}
         <div className="flex flex-col gap-6">
           <Image
-            src="/images/tech2globe-logo.png"
+            src="/images/tech2globe-logo.webp"
             alt="Tech2Globe Logo"
             width={320}
             height={148}
@@ -73,14 +73,14 @@ export default function Footer() {
                 {/* Using divs as placeholders for the partner/featured logos */}
 
                 <Image
-                  src="/images/chamber-logo.png"
+                  src="/images/chamber-logo.webp"
                   alt="chamber logo"
                   width={80}
                   height={42}
                 />
 
                 <Image
-                  src="/images/Nanaimo-Chamber-Certificate.jpg"
+                  src="/images/Nanaimo-Chamber-Certificate.webp"
                   alt="Nanaimo Chamber Certificate"
                   width={90}
                   height={52}

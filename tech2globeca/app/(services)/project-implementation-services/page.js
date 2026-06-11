@@ -275,7 +275,7 @@ export default function ProjectImplementationServices() {
             <div>
               {/* Placeholder for the team image shown in the screenshot */}
               <img
-                src="/images/services/project-managment.jpg"
+                src="/images/services/project-managment.webp"
                 alt="Tech2Globe Canada As The Best Project Management Company"
                 className="rounded-lg overflow-hidden img-fluid"
               />

@@ -33,7 +33,7 @@ import ServiceIntro from "@/components/services/ServiceIntro";
 
 
 // ✅ Change this image path to update the banner for this page only
-const bannerImage = "/images/innerbanner/app-development-banner.png";
+const bannerImage = "/images/innerbanner/app-development-banner.webp";
 
 export const metadata = {
   title: "Mobile App Development Company in Canada @Get Your App Strategy",
@@ -71,7 +71,7 @@ export const metadata = {
 
     images: [
       {
-        url: "https://tech2globe.ca/images/logo.png",
+        url: "https://tech2globe.ca/images/logo.webp",
       },
     ],
   },
@@ -269,7 +269,7 @@ const servicesData = [
 
 
 const introData = {
-  image: "/images/mobile-app-devopment.png",
+  image: "/images/mobile-app-devopment.webp",
   imageAlt: "Mobile App Development Company in Toronto",
   heading: "Top Mobile App Development Company In Toronto",
   paragraphs: [

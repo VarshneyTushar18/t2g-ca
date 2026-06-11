@@ -93,27 +93,27 @@ export const metadata = {
 };
 
 const clientsData = [
-  { id: 1, name: 'Abrams', logo: 'images/clients/abrams.png' },
-  { id: 2, name: 'Absolute Toner', logo: 'images/clients/absolute-toner-logo.png' },
-  { id: 3, name: 'Aniss', logo: 'images/clients/aniss-logo.png' },
-  { id: 4, name: 'Aon Hewitt', logo: 'images/clients/aonHewit.png' },
-  { id: 5, name: 'Aquatech', logo: 'images/clients/aquatech.png' },
-  { id: 6, name: 'Creative Arcades', logo: 'images/clients/creative-arcades.png' },
-  { id: 7, name: 'Follett', logo: 'images/clients/follett.png' },
-  { id: 8, name: 'GBS', logo: 'images/clients/gbs-logo.png' },
-  { id: 9, name: 'HP', logo: 'images/clients/hp.png' },
-  { id: 10, name: 'Wellist', logo: 'images/clients/wellist.png' },
+  { id: 1, name: 'Abrams', logo: 'images/clients/abrams.webp' },
+  { id: 2, name: 'Absolute Toner', logo: 'images/clients/absolute-toner-logo.webp' },
+  { id: 3, name: 'Aniss', logo: 'images/clients/aniss-logo.webp' },
+  { id: 4, name: 'Aon Hewitt', logo: 'images/clients/aonHewit.webp' },
+  { id: 5, name: 'Aquatech', logo: 'images/clients/aquatech.webp' },
+  { id: 6, name: 'Creative Arcades', logo: 'images/clients/creative-arcades.webp' },
+  { id: 7, name: 'Follett', logo: 'images/clients/follett.webp' },
+  { id: 8, name: 'GBS', logo: 'images/clients/gbs-logo.webp' },
+  { id: 9, name: 'HP', logo: 'images/clients/hp.webp' },
+  { id: 10, name: 'Wellist', logo: 'images/clients/wellist.webp' },
 ];
 
 
 const clientsData3 = [
-  { id: 1, name: 'Good Firm', logo: 'images/clients/good-firm.png' },
-  { id: 2, name: 'Clutch', logo: 'images/clients/clutch-2021.png' },
-  { id: 3, name: 'Clutch', logo: 'images/clients/clutch-2021-1.png' },
-  { id: 4, name: 'Clutch', logo: 'images/clients/clutch-2021-2.png' },
-  { id: 5, name: 'Trustpilot', logo: 'images/clients/trust-pilot.png' },
-  { id: 6, name: 'Ypca', logo: 'images/clients/ypca.png' },
-  { id: 7, name: 'Extract', logo: 'images/clients/extract.png' },
+  { id: 1, name: 'Good Firm', logo: 'images/clients/good-firm.webp' },
+  { id: 2, name: 'Clutch', logo: 'images/clients/clutch-2021.webp' },
+  { id: 3, name: 'Clutch', logo: 'images/clients/clutch-2021-1.webp' },
+  { id: 4, name: 'Clutch', logo: 'images/clients/clutch-2021-2.webp' },
+  { id: 5, name: 'Trustpilot', logo: 'images/clients/trust-pilot.webp' },
+  { id: 6, name: 'Ypca', logo: 'images/clients/ypca.webp' },
+  { id: 7, name: 'Extract', logo: 'images/clients/extract.webp' },
 ];
 
 const stats = [
@@ -338,7 +338,7 @@ export default function WebDevelopmentAgency() {
             <div>
               {/* Placeholder for the team image shown in the screenshot */}
               <img
-                src="/images/services/web.jpg"
+                src="/images/services/web.webp"
                 alt="Get To Know About Our Web Development Company Canada"
                 className="rounded-lg overflow-hidden img-fluid"
               />
@@ -380,7 +380,7 @@ export default function WebDevelopmentAgency() {
             <div>
               {/* Placeholder for the team image shown in the screenshot */}
               <img
-                src="/images/services/award.jpg"
+                src="/images/services/award.webp"
                 alt="Our Accomplishments"
                 className="rounded-lg overflow-hidden img-fluid"
               />
@@ -480,7 +480,7 @@ export default function WebDevelopmentAgency() {
             <div>
               {/* Placeholder for the team image shown in the screenshot */}
               <img
-                src="/images/services/why-choose-us-1.jpg"
+                src="/images/services/why-choose-us-1.webp"
                 alt="Why Choose Tech2Globe For Web Development Services?"
                 className="rounded-lg overflow-hidden img-fluid"
               />

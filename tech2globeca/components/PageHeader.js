@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const DEFAULT_IMAGE = "/images/Banner-Tech2Globe.jpg";
+const DEFAULT_IMAGE = "/images/Banner-Tech2Globe.webp";
 
 export default function PageHeader({ title, breadcrumbs = [], image }) {
   const bannerImage = image || DEFAULT_IMAGE;

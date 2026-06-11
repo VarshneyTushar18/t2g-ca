@@ -29,7 +29,7 @@ export default function AboutUs() {
             {/* Left Image */}
             <div className="relative w-full h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-lg border border-gray-100">
               <img
-                src="/images/about-us-slider.jpg"
+                src="/images/about-us-slider.webp"
                 alt="About Tech2Globe Canada"
                 className="w-full h-full object-cover"
               />
@@ -110,12 +110,12 @@ export default function AboutUs() {
 
           <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
             {[
-              't2g-clutch.png',
-              't2g-behance.png',
-              't2g-themenifest.png',
-              't2g-your-story.png',
-              't2g-goodfirms.png',
-              't2g-researchgate.png'
+              't2g-clutch.webp',
+              't2g-behance.webp',
+              't2g-themenifest.webp',
+              't2g-your-story.webp',
+              't2g-goodfirms.webp',
+              't2g-researchgate.webp'
             ].map((logo, index) => (
               <div key={index} className="border border-gray-200 p-8 flex items-center justify-center bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300 rounded">
                 <img src={`/images/clients/${logo}`} alt="Recognition Logo" className="max-h-12 object-contain transition-all duration-300" />

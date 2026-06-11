@@ -60,35 +60,35 @@ export const metadata = {
 };
 
 const clientsData3 = [
-  { id: 1, name: 'Good Firm', logo: 'images/clients/good-firm.png' },
-  { id: 2, name: 'Clutch', logo: 'images/clients/clutch-2021.png' },
-  { id: 3, name: 'Clutch', logo: 'images/clients/clutch-2021-1.png' },
-  { id: 4, name: 'Clutch', logo: 'images/clients/clutch-2021-2.png' },
-  { id: 5, name: 'Trustpilot', logo: 'images/clients/trust-pilot.png' },
-  { id: 6, name: 'Ypca', logo: 'images/clients/ypca.png' },
-  { id: 7, name: 'Extract', logo: 'images/clients/extract.png' },
+  { id: 1, name: 'Good Firm', logo: 'images/clients/good-firm.webp' },
+  { id: 2, name: 'Clutch', logo: 'images/clients/clutch-2021.webp' },
+  { id: 3, name: 'Clutch', logo: 'images/clients/clutch-2021-1.webp' },
+  { id: 4, name: 'Clutch', logo: 'images/clients/clutch-2021-2.webp' },
+  { id: 5, name: 'Trustpilot', logo: 'images/clients/trust-pilot.webp' },
+  { id: 6, name: 'Ypca', logo: 'images/clients/ypca.webp' },
+  { id: 7, name: 'Extract', logo: 'images/clients/extract.webp' },
 ];
 
 
 const portfolioItems = [
   {
     title: "QUIQUP",
-    image: "/images/portfolio/QUIQUP.png",
+    image: "/images/portfolio/QUIQUP.webp",
     website: "https://www.quiqup.com/",
   },
   {
     title: "QUIQUP",
-    image: "/images/portfolio/QUIQUP.png",
+    image: "/images/portfolio/QUIQUP.webp",
     website: "https://www.quiqup.com/",
   },
   {
     title: "QUIQUP",
-    image: "/images/portfolio/QUIQUP.png",
+    image: "/images/portfolio/QUIQUP.webp",
     website: "https://www.quiqup.com/",
   },
   {
     title: "QUIQUP",
-    image: "/images/portfolio/QUIQUP.png",
+    image: "/images/portfolio/QUIQUP.webp",
     website: "https://www.quiqup.com/",
   },
 ];
@@ -286,7 +286,7 @@ export default function DigitalMarketingAgency() {
             <div>
               {/* Placeholder for the team image shown in the screenshot */}
               <img
-                src="/images/services/homepage-option17-banner-bg2.png"
+                src="/images/services/homepage-option17-banner-bg2.webp"
                 alt="Why Choose Us"
                 className="rounded-lg overflow-hidden shadow-lg img-fluid"
               />
@@ -403,7 +403,7 @@ export default function DigitalMarketingAgency() {
               <figure>
                 <div className="portfolioImg">
                   <Image
-                    src="/images/services/QUIQUP.png"
+                    src="/images/services/QUIQUP.webp"
                     alt="QUIQUP"
                     width={500}
                     height={300}
@@ -420,7 +420,7 @@ export default function DigitalMarketingAgency() {
                     </a>
 
                     <a
-                      href="/images/portfolio/QUIQUP.png"
+                      href="/images/portfolio/QUIQUP.webp"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -440,7 +440,7 @@ export default function DigitalMarketingAgency() {
               <figure>
                 <div className="portfolioImg">
                   <Image
-                    src="/images/services/sports456.jpg"
+                    src="/images/services/sports456.webp"
                     alt="Sports456"
                     width={500}
                     height={300}
@@ -457,7 +457,7 @@ export default function DigitalMarketingAgency() {
                     </a>
 
                     <a
-                      href="/images/services/sports456.jpg"
+                      href="/images/services/sports456.webp"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -477,7 +477,7 @@ export default function DigitalMarketingAgency() {
               <figure>
                 <div className="portfolioImg">
                   <Image
-                    src="/images/services/shopaloo.jpg"
+                    src="/images/services/shopaloo.webp"
                     alt="Shopaloo"
                     width={500}
                     height={300}
@@ -494,7 +494,7 @@ export default function DigitalMarketingAgency() {
                     </a>
 
                     <a
-                      href="/images/services/QUIQUP.png"
+                      href="/images/services/QUIQUP.webp"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -514,7 +514,7 @@ export default function DigitalMarketingAgency() {
               <figure>
                 <div className="portfolioImg">
                   <Image
-                    src="/images/services/plazasurfsports.jpg"
+                    src="/images/services/plazasurfsports.webp"
                     alt="plazasurfsports"
                     width={500}
                     height={300}
@@ -531,7 +531,7 @@ export default function DigitalMarketingAgency() {
                     </a>
 
                     <a
-                      href="/images/services/plazasurfsports.jpg"
+                      href="/images/services/plazasurfsports.webp"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

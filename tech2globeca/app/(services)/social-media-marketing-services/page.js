@@ -56,7 +56,7 @@ export const metadata = {
 
   alternates: {
     canonical:
-      "https://tech2globe.ca/social-media-marketing-services",
+      "https://tech2globe.ca/social-media-marketing-services-services",
   },
 
   openGraph: {
@@ -67,7 +67,7 @@ export const metadata = {
       "Results-driven ROI marketing, complimentary audits, customized plans, and 10,000+ successful projects.",
 
     url:
-      "https://tech2globe.ca/social-media-marketing-services",
+      "https://tech2globe.ca/social-media-marketing-services-services",
 
     siteName:
       "Tech2Globe Canada: Multi-Function IT Outsourcing Services",
@@ -80,27 +80,27 @@ export const metadata = {
 };
 
 const clientsData = [
-  { id: 1, name: 'Abrams', logo: 'images/clients/abrams.png' },
-  { id: 2, name: 'Absolute Toner', logo: 'images/clients/absolute-toner-logo.png' },
-  { id: 3, name: 'Aniss', logo: 'images/clients/aniss-logo.png' },
-  { id: 4, name: 'Aon Hewitt', logo: 'images/clients/aonHewit.png' },
-  { id: 5, name: 'Aquatech', logo: 'images/clients/aquatech.png' },
-  { id: 6, name: 'Creative Arcades', logo: 'images/clients/creative-arcades.png' },
-  { id: 7, name: 'Follett', logo: 'images/clients/follett.png' },
-  { id: 8, name: 'GBS', logo: 'images/clients/gbs-logo.png' },
-  { id: 9, name: 'HP', logo: 'images/clients/hp.png' },
-  { id: 10, name: 'Wellist', logo: 'images/clients/wellist.png' },
+  { id: 1, name: 'Abrams', logo: 'images/clients/abrams.webp' },
+  { id: 2, name: 'Absolute Toner', logo: 'images/clients/absolute-toner-logo.webp' },
+  { id: 3, name: 'Aniss', logo: 'images/clients/aniss-logo.webp' },
+  { id: 4, name: 'Aon Hewitt', logo: 'images/clients/aonHewit.webp' },
+  { id: 5, name: 'Aquatech', logo: 'images/clients/aquatech.webp' },
+  { id: 6, name: 'Creative Arcades', logo: 'images/clients/creative-arcades.webp' },
+  { id: 7, name: 'Follett', logo: 'images/clients/follett.webp' },
+  { id: 8, name: 'GBS', logo: 'images/clients/gbs-logo.webp' },
+  { id: 9, name: 'HP', logo: 'images/clients/hp.webp' },
+  { id: 10, name: 'Wellist', logo: 'images/clients/wellist.webp' },
 ];
 
 
 const clientsData3 = [
-  { id: 1, name: 'Good Firm', logo: 'images/clients/good-firm.png' },
-  { id: 2, name: 'Clutch', logo: 'images/clients/clutch-2021.png' },
-  { id: 3, name: 'Clutch', logo: 'images/clients/clutch-2021-1.png' },
-  { id: 4, name: 'Clutch', logo: 'images/clients/clutch-2021-2.png' },
-  { id: 5, name: 'Trustpilot', logo: 'images/clients/trust-pilot.png' },
-  { id: 6, name: 'Ypca', logo: 'images/clients/ypca.png' },
-  { id: 7, name: 'Extract', logo: 'images/clients/extract.png' },
+  { id: 1, name: 'Good Firm', logo: 'images/clients/good-firm.webp' },
+  { id: 2, name: 'Clutch', logo: 'images/clients/clutch-2021.webp' },
+  { id: 3, name: 'Clutch', logo: 'images/clients/clutch-2021-1.webp' },
+  { id: 4, name: 'Clutch', logo: 'images/clients/clutch-2021-2.webp' },
+  { id: 5, name: 'Trustpilot', logo: 'images/clients/trust-pilot.webp' },
+  { id: 6, name: 'Ypca', logo: 'images/clients/ypca.webp' },
+  { id: 7, name: 'Extract', logo: 'images/clients/extract.webp' },
 ];
 
 
@@ -270,7 +270,7 @@ export default function SocialMediaMarketingServices() {
             <div>
               {/* Placeholder for the team image shown in the screenshot */}
               <img
-                src="/images/services/why-smo.jpg"
+                src="/images/services/why-smo.webp"
                 alt="Why Do Businesses Need Social Media Management?"
                 className="rounded-lg overflow-hidden shadow-lg img-fluid"
               />
@@ -301,7 +301,7 @@ export default function SocialMediaMarketingServices() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
             <div className="flex flex-col">
-              <Image width={100} height={100} src="/images/services/facebook-icon.png" alt="Facebook" className="mb-3" />
+              <Image width={100} height={100} src="/images/services/facebook-icon.webp" alt="Facebook" className="mb-3" />
               <h3 className="text-xl font-bold text-[#c7010c] mb-4">
                 Facebook Marketing
               </h3>
@@ -312,7 +312,7 @@ export default function SocialMediaMarketingServices() {
             </div>
 
             <div className="flex flex-col">
-              <Image width={100} height={100} src="/images/services/youtube-logo-icon.png" alt="Youtube" className="mb-3" />
+              <Image width={100} height={100} src="/images/services/youtube-logo-icon.webp" alt="Youtube" className="mb-3" />
               <h3 className="text-xl font-bold text-[#c7010c] mb-4">
                 YouTube Marketing
               </h3>
@@ -323,7 +323,7 @@ export default function SocialMediaMarketingServices() {
             </div>
 
             <div className="flex flex-col">
-              <Image width={100} height={100} src="/images/services/linkedin-icon.png" alt="LinkedIn" className="mb-3" />
+              <Image width={100} height={100} src="/images/services/linkedin-icon.webp" alt="LinkedIn" className="mb-3" />
               <h3 className="text-xl font-bold text-[#c7010c] mb-4">
                 LinkedIn Marketing
               </h3>
@@ -334,7 +334,7 @@ export default function SocialMediaMarketingServices() {
             </div>
 
             <div className="flex flex-col">
-              <Image width={100} height={100} src="/images/services/instagram-icon.png" alt="Instagram" className="mb-3" />
+              <Image width={100} height={100} src="/images/services/instagram-icon.webp" alt="Instagram" className="mb-3" />
               <h3 className="text-xl font-bold text-[#c7010c] mb-4">
                 Instagram Marketing
               </h3>
@@ -345,7 +345,7 @@ export default function SocialMediaMarketingServices() {
             </div>
 
             <div className="flex flex-col">
-              <Image width={100} height={100} src="/images/services/twitter-icon.png" alt="Twitter" className="mb-3" />
+              <Image width={100} height={100} src="/images/services/twitter-icon.webp" alt="Twitter" className="mb-3" />
               <h3 className="text-xl font-bold text-[#c7010c] mb-4">
                 Twitter Marketing
               </h3>
@@ -356,7 +356,7 @@ export default function SocialMediaMarketingServices() {
             </div>
 
             <div className="flex flex-col">
-              <Image width={100} height={100} src="/images/services/pinterest-icon.png" alt="Pinterest" className="mb-3" />
+              <Image width={100} height={100} src="/images/services/pinterest-icon.webp" alt="Pinterest" className="mb-3" />
               <h3 className="text-xl font-bold text-[#c7010c] mb-4">
                 Pinterest Marketing
               </h3>

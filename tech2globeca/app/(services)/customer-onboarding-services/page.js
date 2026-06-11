@@ -226,7 +226,7 @@ export default function CustomerOnboardingService() {
             <div>
               {/* Placeholder for the team image shown in the screenshot */}
               <img
-                src="/images/services/customer.jpg"
+                src="/images/services/customer.webp"
                 alt="Best Customer Onboarding Service, Toronto, Canada"
                 className="rounded-lg overflow-hidden img-fluid"
               />
