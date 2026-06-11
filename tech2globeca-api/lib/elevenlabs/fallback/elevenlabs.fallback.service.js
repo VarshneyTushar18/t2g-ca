@@ -44,21 +44,35 @@ export function wrapApiResponseToWebhookShape(apiResponse) {
     event_timestamp: eventTs,
     data: {
       conversation_id: apiResponse.conversation_id,
+      agent_id: apiResponse.agent_id,
+      agent_name: apiResponse.agent_name,
+      user_id: apiResponse.user_id,
+      status: apiResponse.status,
       transcript: Array.isArray(apiResponse.transcript) ? apiResponse.transcript : [],
+      metadata: apiResponse.metadata,
+      analysis: apiResponse.analysis,
+      conversation_initiation_client_data:
+        apiResponse.conversation_initiation_client_data,
     },
   };
 }
 
 export async function sendTranscriptEmail(webhookShape) {
-  const { eventTs, conversationId, formatted } = parseTranscriptPayload(webhookShape);
+  const { eventTs, conversationId, formatted, context } =
+    parseTranscriptPayload(webhookShape);
   const to = getTranscriptRecipients();
   const from = getSmtpFromAddress();
   if (!from) {
     throw new Error("Email sender not configured (set SMTP_EMAIL or SMTP_USER)");
   }
 
-  const html = buildTranscriptEmailHtml({ conversationId, eventTs, formatted });
-  const subject = buildTranscriptSubject(conversationId, eventTs);
+  const html = buildTranscriptEmailHtml({
+    conversationId,
+    eventTs,
+    formatted,
+    context,
+  });
+  const subject = buildTranscriptSubject(conversationId, eventTs, context);
 
   await getMailTransporter().sendMail({
     from: `"Chat Support" <${from}>`,

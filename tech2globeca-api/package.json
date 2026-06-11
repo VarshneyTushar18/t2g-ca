@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "migrate:blogs": "node scripts/migrate-blogs.mjs"
+    "migrate:blogs": "node scripts/migrate-blogs.mjs",
+    "setup:blogs": "node scripts/setup-blogs-db.mjs"
   },
   "dependencies": {
     "cors": "^2.8.5",

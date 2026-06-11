@@ -35,6 +35,32 @@ node scripts/migrate-blogs.mjs "E:/ca blog/buynfqw4_blogtech_CA.sql"
 
 This writes `data/blogs.json` and `data/blogs_seed.sql`, and imports into MySQL when `DB_*` credentials are set in `.env`.
 
+### VPS: create blogs table + import posts
+
+If PM2 logs show `Table 't2g_db.blogs_tech2globeca' doesn't exist`, run on the server:
+
+```bash
+cd /path/to/tech2globeca-api
+npm run setup:blogs
+pm2 restart t2g-canada-backend --update-env
+```
+
+Or manually:
+
+```bash
+mysql -u t2g_leads -p t2g_db < sql/blogs_tech2globeca.sql
+mysql -u t2g_leads -p t2g_db < data/blogs_seed.sql
+```
+
+Ensure the DB user can access the blogs table:
+
+```sql
+GRANT SELECT, INSERT, UPDATE, DELETE ON t2g_db.blogs_tech2globeca TO 't2g_leads'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+Blog images are served from `blog.tech2globe.ca` uploads. The frontend proxies them at `/blog-media/*` (see `next.config.ts`) because HTTPS on the blog subdomain may be broken. After deploying frontend changes, rebuild Next.js on the VPS.
+
 Blog API endpoints:
 
 - `GET /api/blogs` — list posts (`page`, `limit`, `search`, `category`)

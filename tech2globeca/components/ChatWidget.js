@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const AGENT_ID =
   process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID ||
@@ -11,6 +11,13 @@ const API_URL = process.env.NEXT_PUBLIC_CONTACT_API_URL || "http://localhost:300
 export default function ChatWidget() {
   const containerRef = useRef(null);
   const conversationIdRef = useRef(null);
+  const [dynamicVariables, setDynamicVariables] = useState(null);
+
+  useEffect(() => {
+    setDynamicVariables(
+      JSON.stringify({ source_page: window.location.href }),
+    );
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -55,7 +62,12 @@ export default function ChatWidget() {
   return (
     <>
       <div ref={containerRef}>
-        <elevenlabs-convai agent-id={AGENT_ID} />
+        <elevenlabs-convai
+          agent-id={AGENT_ID}
+          {...(dynamicVariables
+            ? { "dynamic-variables": dynamicVariables }
+            : {})}
+        />
       </div>
       <Script
         src="https://unpkg.com/@elevenlabs/convai-widget-embed"
