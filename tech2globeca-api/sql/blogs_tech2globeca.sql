@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS blogs_tech2globeca (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  wp_id BIGINT UNSIGNED NULL,
+  slug VARCHAR(255) NOT NULL,
+  title VARCHAR(500) NOT NULL,
+  excerpt TEXT NULL,
+  content LONGTEXT NOT NULL,
+  featured_image VARCHAR(1000) NULL,
+  author_name VARCHAR(255) NULL,
+  category VARCHAR(255) NULL,
+  status ENUM('published', 'draft') NOT NULL DEFAULT 'published',
+  published_at DATETIME NULL,
+  updated_at DATETIME NULL,
+  meta_title VARCHAR(500) NULL,
+  meta_description TEXT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE KEY uq_blogs_slug (slug),
+  KEY idx_blogs_status_published (status, published_at DESC),
+  KEY idx_blogs_wp_id (wp_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

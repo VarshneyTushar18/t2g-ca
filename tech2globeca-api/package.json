@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "migrate:blogs": "node scripts/migrate-blogs.mjs"
   },
   "dependencies": {
     "cors": "^2.8.5",

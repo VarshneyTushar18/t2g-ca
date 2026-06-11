@@ -1,3 +1,5 @@
 node_modules/
-.env
+.env*
 npm-debug.log*
+data/elevenlabs-pending.json
+data/elevenlabs-pending.json.tmp

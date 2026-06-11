@@ -51,17 +51,20 @@ export async function createContact(req, res) {
   try {
     const location = await resolveIpLocation(clientIp);
 
-    const leadId = await insertLead({
-      name: result.data.name,
-      phone: result.data.phone,
-      email: result.data.email,
-      message: result.data.message,
-      country: result.data.country,
-      senderIp: clientIp,
-      location,
-      sourcePage: result.data.sourcePage,
-      formType: result.data.formType,
-    });
+    let leadId = null;
+    if (process.env.SKIP_DB_VERIFY !== "true") {
+      leadId = await insertLead({
+        name: result.data.name,
+        phone: result.data.phone,
+        email: result.data.email,
+        message: result.data.message,
+        country: result.data.country,
+        senderIp: clientIp,
+        location,
+        sourcePage: result.data.sourcePage,
+        formType: result.data.formType,
+      });
+    }
 
     await sendLeadEmails({
       name: result.data.name,

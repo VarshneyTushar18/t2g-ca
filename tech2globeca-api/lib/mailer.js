@@ -18,6 +18,22 @@ export function getMailFrom() {
   return process.env.MAIL_FROM || `"Tech2Globe" <${smtpEmail}>`;
 }
 
+export function getSmtpFromAddress() {
+  return (process.env.ELEVENLABS_FROM_EMAIL || process.env.SMTP_EMAIL || process.env.SMTP_USER || "").trim();
+}
+
+export function getTranscriptRecipients() {
+  const dedicated = process.env.ELEVENLABS_TRANSCRIPT_EMAIL;
+  if (dedicated) {
+    return dedicated
+      .split(",")
+      .map((e) => e.trim())
+      .filter(Boolean)
+      .join(",");
+  }
+  return getLeadEmails().join(",");
+}
+
 export function createMailTransporter() {
   transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,

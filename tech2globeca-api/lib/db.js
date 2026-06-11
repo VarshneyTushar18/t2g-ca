@@ -1,12 +1,17 @@
 import mysql from "mysql2/promise";
 
-const requiredDbEnv = ["DB_HOST", "DB_USER", "DB_PASS", "DB_NAME"];
+const requiredDbEnv = ["DB_HOST", "DB_USER", "DB_NAME"];
 
 for (const key of requiredDbEnv) {
   if (!process.env[key]) {
     console.error(`Missing required database environment variable: ${key}`);
     process.exit(1);
   }
+}
+
+if (process.env.DB_PASS == null) {
+  console.error("Missing required database environment variable: DB_PASS");
+  process.exit(1);
 }
 
 const pool = mysql.createPool({
