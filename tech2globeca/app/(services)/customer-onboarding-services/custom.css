@@ -1,0 +1,248 @@
+.portfolioSection {
+    padding: 60px 20px;
+}
+
+.portfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.gridItem {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.gridItem:hover {
+    transform: translateY(-5px);
+}
+
+.portfolioImg {
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolioIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 15px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.portfolioImg:hover .portfolioIcon {
+    opacity: 1;
+}
+
+.portfolioIcon a {
+    width: 42px;
+    height: 42px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.portfolioIcon a:hover {
+    background: #000;
+    color: #fff;
+}
+
+figcaption {
+    padding: 18px;
+    text-align: center;
+}
+
+figcaption span {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+    .portfolioGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolioGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.hrline hr {
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #0000001a;
+    color: #0000001a;
+}
+
+.hrline svg {
+    width: 30px;
+}
+
+/* Step-By-Step Workflow Section Styles */
+.workflow-section {
+    position: relative;
+    padding: 90px 0;
+    background-image: url('/images/services/workflow-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    overflow: hidden;
+}
+
+/* Semi-transparent dark gradient overlay with warm crimson tint */
+.workflow-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.88) 0%, rgba(26, 1, 3, 0.92) 50%, rgba(0, 0, 0, 0.88) 100%);
+    z-index: 1;
+}
+
+.workflow-container {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.workflow-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 0px;
+    padding: 40px 30px;
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Accent top-glow line on hover */
+.workflow-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #c7010c, #ff3b47);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.workflow-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 25px rgba(199, 1, 12, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.workflow-card:hover::before {
+    opacity: 1;
+}
+
+.workflow-number {
+    font-size: 42px;
+    font-weight: 700;
+    color: #c7010c;
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+    transition: all 0.4s ease;
+    letter-spacing: -0.5px;
+}
+
+.workflow-card:hover .workflow-number {
+    color: #ff3b47;
+    transform: scale(1.08) translateX(2px);
+    text-shadow: 0 0 10px rgba(255, 59, 71, 0.35);
+}
+
+.workflow-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: -0.2px;
+}
+
+.workflow-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0;
+    font-weight: 400;
+    transition: color 0.4s ease;
+}
+
+.workflow-card:hover .workflow-desc {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.newgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Responsive breakpoints for custom grid */
+@media (max-width: 1024px) {
+    .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .newgrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .workflow-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .newgrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.servicestwo .rounded-full {
+    display: none;
+}
