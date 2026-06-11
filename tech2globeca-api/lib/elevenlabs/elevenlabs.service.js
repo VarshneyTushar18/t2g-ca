@@ -70,11 +70,227 @@ export function verifyElevenLabsSignature(rawBody, signatureHeader, secret) {
   return { ok: true };
 }
 
-function getMessageText(item) {
-  if (item.message != null) return item.message;
-  if (item.text != null) return item.text;
-  if (item.content != null) return item.content;
-  return JSON.stringify(item);
+function extractMultivoiceMessage(value) {
+  if (!value) return null;
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    return trimmed || null;
+  }
+  if (typeof value !== "object") return null;
+
+  if (typeof value.message === "string" && value.message.trim()) {
+    return value.message.trim();
+  }
+
+  if (Array.isArray(value.parts)) {
+    const joined = value.parts
+      .map((part) => {
+        if (typeof part === "string") return part;
+        return part?.text || part?.message || "";
+      })
+      .filter(Boolean)
+      .join(" ")
+      .trim();
+    return joined || null;
+  }
+
+  return null;
+}
+
+function isLikelyInternalPayload(text) {
+  if (!text.startsWith("{")) return false;
+
+  try {
+    const parsed = JSON.parse(text);
+    return (
+      parsed &&
+      typeof parsed === "object" &&
+      (Array.isArray(parsed.tool_calls) ||
+        Array.isArray(parsed.tool_results) ||
+        parsed.agent_metadata != null)
+    );
+  } catch {
+    return false;
+  }
+}
+
+function getDisplayableMessage(item) {
+  if (!item || typeof item !== "object") return null;
+
+  const candidates = [
+    item.message,
+    item.text,
+    item.content,
+    item.original_message,
+    extractMultivoiceMessage(item.multivoice_message),
+  ];
+
+  for (const candidate of candidates) {
+    if (candidate == null) continue;
+    const text = String(candidate).trim();
+    if (!text || isLikelyInternalPayload(text)) continue;
+    return text;
+  }
+
+  return null;
+}
+
+function pickFirstString(...values) {
+  for (const value of values) {
+    if (value == null) continue;
+    const text = String(value).trim();
+    if (text) return text;
+  }
+  return null;
+}
+
+function normalizeFieldKey(key) {
+  return String(key).toLowerCase().replace(/[\s_-]+/g, "");
+}
+
+function matchesFieldKey(key, patterns) {
+  const normalized = normalizeFieldKey(key);
+  return patterns.some(
+    (pattern) => normalized === pattern || normalized.includes(pattern),
+  );
+}
+
+function extractCollectionValue(entry) {
+  if (entry == null) return null;
+  if (typeof entry === "string") return entry.trim() || null;
+  if (typeof entry === "number" || typeof entry === "boolean") {
+    return String(entry);
+  }
+  if (typeof entry === "object") {
+    const value =
+      entry.value ?? entry.result ?? entry.collected_value ?? entry.data;
+    if (value != null) return String(value).trim() || null;
+  }
+  return null;
+}
+
+function extractFromDataCollection(dataCollectionResults) {
+  const out = { name: null, email: null, phone: null };
+  if (!dataCollectionResults || typeof dataCollectionResults !== "object") {
+    return out;
+  }
+
+  for (const [key, value] of Object.entries(dataCollectionResults)) {
+    const text = extractCollectionValue(value);
+    if (!text) continue;
+
+    if (matchesFieldKey(key, ["email", "mail"])) {
+      out.email = out.email || text;
+    } else if (matchesFieldKey(key, ["phone", "mobile", "tel"])) {
+      out.phone = out.phone || text;
+    } else if (
+      matchesFieldKey(key, [
+        "name",
+        "fullname",
+        "firstname",
+        "lastname",
+        "username",
+      ])
+    ) {
+      out.name = out.name || text;
+    }
+  }
+
+  return out;
+}
+
+function inferFromMessages(formatted) {
+  const userText = formatted
+    .filter((item) => String(item.role).toLowerCase() === "user")
+    .map((item) => item.message)
+    .join("\n");
+
+  const email =
+    userText.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)?.[0] ?? null;
+  const phone =
+    userText.match(
+      /(?:\+?\d{1,3}[\s-]?)?(?:\(?\d{3}\)?[\s-]?)\d{3}[\s-]?\d{4}/,
+    )?.[0] ?? null;
+
+  return { email, phone, name: null };
+}
+
+export function buildVisitorLabel({ name, email, phone, userId }) {
+  const parts = [];
+  if (name) parts.push(name);
+  if (email) parts.push(email);
+  if (phone && !parts.includes(phone)) parts.push(phone);
+
+  if (parts.length) return parts.join(" • ");
+  if (userId) return `Visitor ID: ${userId}`;
+  return "Anonymous visitor";
+}
+
+export function extractConversationContext(data, formatted = []) {
+  const root = data?.data ?? data ?? {};
+  const dynamicVars =
+    root.conversation_initiation_client_data?.dynamic_variables ?? {};
+  const collected = extractFromDataCollection(
+    root.analysis?.data_collection_results,
+  );
+  const inferred = inferFromMessages(formatted);
+  const metadata = root.metadata ?? {};
+
+  const name = pickFirstString(
+    collected.name,
+    dynamicVars.user_name,
+    dynamicVars.name,
+    dynamicVars.full_name,
+    dynamicVars.user_first_name,
+    dynamicVars.first_name,
+    dynamicVars.visitor_name,
+    inferred.name,
+  );
+
+  const email = pickFirstString(
+    collected.email,
+    dynamicVars.email,
+    dynamicVars.user_email,
+    dynamicVars.visitor_email,
+    inferred.email,
+  );
+
+  const phone = pickFirstString(
+    collected.phone,
+    dynamicVars.phone,
+    dynamicVars.user_phone,
+    dynamicVars.phone_number,
+    metadata.phone_call?.external_number,
+    metadata.phone_call?.from,
+    inferred.phone,
+  );
+
+  const sourcePage = pickFirstString(
+    dynamicVars.source_page,
+    dynamicVars.page_url,
+    dynamicVars.pageUrl,
+    dynamicVars.url,
+  );
+
+  const userId = pickFirstString(root.user_id, metadata.user_id);
+  const summary = pickFirstString(root.analysis?.transcript_summary);
+  const agentName = pickFirstString(root.agent_name);
+
+  const displayName =
+    name ||
+    (email ? email.split("@")[0] : null) ||
+    (userId ? `User ${userId}` : null);
+
+  return {
+    name: displayName,
+    email,
+    phone,
+    sourcePage,
+    userId,
+    summary,
+    agentName,
+    displayLabel: buildVisitorLabel({ name: displayName, email, phone, userId }),
+  };
 }
 
 export function parseTranscriptPayload(data) {
@@ -109,11 +325,12 @@ export function parseTranscriptPayload(data) {
     }
   }
 
-  const formatted = transcriptArray.map((item) => {
-    const role = item.role ?? "unknown";
-    let msgText = getMessageText(item);
-    if (typeof msgText === "object") msgText = JSON.stringify(msgText);
+  const formatted = [];
+  for (const item of transcriptArray) {
+    const msgText = getDisplayableMessage(item);
+    if (!msgText) continue;
 
+    const role = item.role ?? "unknown";
     const timeInCall = Number.isFinite(item?.time_in_call_secs)
       ? Number(item.time_in_call_secs)
       : null;
@@ -123,15 +340,17 @@ export function parseTranscriptPayload(data) {
         ? eventTs - (maxTime - timeInCall)
         : eventTs;
 
-    return {
+    formatted.push({
       role,
-      message: String(msgText),
+      message: msgText,
       local_time: formatLocalTime(absEpoch),
       epoch: absEpoch,
-    };
-  });
+    });
+  }
 
-  return { eventTs, conversationId, formatted };
+  const context = extractConversationContext(data, formatted);
+
+  return { eventTs, conversationId, formatted, context };
 }
 
 function buildMessageRows(messages) {
@@ -168,7 +387,12 @@ function buildMessageRows(messages) {
     .join("");
 }
 
-export function buildTranscriptEmailHtml({ conversationId, eventTs, formatted }) {
+export function buildTranscriptEmailHtml({
+  conversationId,
+  eventTs,
+  formatted,
+  context = {},
+}) {
   const readMoreUrl = `https://elevenlabs.io/app/agents/history/${conversationId}`;
   const messagesToShow = formatted.slice(0, MAX_MESSAGES_IN_EMAIL);
   const htmlMessages =
@@ -180,6 +404,21 @@ export function buildTranscriptEmailHtml({ conversationId, eventTs, formatted })
 
   const dateStr = formatDate(eventTs);
   const totalMsgs = formatted.length;
+  const visitorLabel = escapeHtml(context.displayLabel || "Anonymous visitor");
+  const metaLines = [
+    `<strong>Visitor:</strong> ${visitorLabel}`,
+    `<strong>Date:</strong> ${dateStr} • <strong>Messages:</strong> ${totalMsgs}`,
+  ];
+
+  if (context.sourcePage) {
+    metaLines.push(`<strong>Page:</strong> ${escapeHtml(context.sourcePage)}`);
+  }
+  if (context.summary) {
+    metaLines.push(`<strong>Summary:</strong> ${escapeHtml(context.summary)}`);
+  }
+  if (context.userId && context.displayLabel === "Anonymous visitor") {
+    metaLines.push(`<strong>Visitor ID:</strong> ${escapeHtml(context.userId)}`);
+  }
 
   return `<!doctype html>
 <html lang="en">
@@ -212,7 +451,7 @@ export function buildTranscriptEmailHtml({ conversationId, eventTs, formatted })
 <td>
 <div class="header">Chat Transcript</div>
 <div class="meta">
-<strong>Date:</strong> ${dateStr} • <strong>Messages:</strong> ${totalMsgs}
+${metaLines.join("<br />")}
 </div>
 <table class="message-table" cellpadding="0" cellspacing="0" width="100%" style="padding:18px 20px;">
 ${htmlMessages}
@@ -231,7 +470,7 @@ ${htmlMessages}
 </html>`;
 }
 
-export function buildTranscriptSubject(conversationId, eventTs) {
+export function buildTranscriptSubject(conversationId, eventTs, context = {}) {
   const prefix = process.env.ELEVENLABS_SUBJECT_PREFIX || "Chat Transcript";
   const when = new Date(eventTs * 1000).toLocaleString("en-IN", {
     timeZone: TZ,
@@ -242,5 +481,9 @@ export function buildTranscriptSubject(conversationId, eventTs) {
     minute: "2-digit",
     hour12: false,
   });
-  return `${prefix} #${conversationId} - ${when}`;
+  const who =
+    context.displayLabel && context.displayLabel !== "Anonymous visitor"
+      ? ` — ${context.displayLabel}`
+      : "";
+  return `${prefix}${who} #${conversationId} - ${when}`;
 }

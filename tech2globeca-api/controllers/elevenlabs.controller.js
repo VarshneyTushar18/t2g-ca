@@ -51,7 +51,8 @@ export async function handleTranscriptWebhook(req, res) {
     return res.status(200).send("Ignored");
   }
 
-  const { eventTs, conversationId, formatted } = parseTranscriptPayload(data);
+  const { eventTs, conversationId, formatted, context } =
+    parseTranscriptPayload(data);
   const to = getTranscriptRecipients();
   const from = getSmtpFromAddress();
   if (!from) {
@@ -59,8 +60,13 @@ export async function handleTranscriptWebhook(req, res) {
     return res.status(500).send("Email sender not configured");
   }
 
-  const html = buildTranscriptEmailHtml({ conversationId, eventTs, formatted });
-  const subject = buildTranscriptSubject(conversationId, eventTs);
+  const html = buildTranscriptEmailHtml({
+    conversationId,
+    eventTs,
+    formatted,
+    context,
+  });
+  const subject = buildTranscriptSubject(conversationId, eventTs, context);
 
   try {
     await getMailTransporter().sendMail({
