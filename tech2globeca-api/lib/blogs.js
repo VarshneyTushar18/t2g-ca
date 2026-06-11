@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import mysql from "mysql2/promise";
+import { normalizeBlogMediaUrl, rewriteBlogContentHtml } from "./blogMedia.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const seedPath = path.join(__dirname, "..", "data", "blogs.json");
@@ -44,8 +45,8 @@ function mapBlogRow(row) {
     slug: row.slug,
     title: row.title,
     excerpt: row.excerpt || "",
-    content: row.content,
-    featuredImage: row.featured_image || null,
+    content: rewriteBlogContentHtml(row.content),
+    featuredImage: normalizeBlogMediaUrl(row.featured_image) || null,
     authorName: row.author_name || "Tech2Globe",
     category: row.category || "Blog",
     status: row.status,
@@ -68,8 +69,8 @@ function readSeedBlogs() {
     slug: blog.slug,
     title: blog.title,
     excerpt: blog.excerpt || "",
-    content: blog.content,
-    featuredImage: blog.featured_image || null,
+    content: rewriteBlogContentHtml(blog.content),
+    featuredImage: normalizeBlogMediaUrl(blog.featured_image) || null,
     authorName: blog.author_name || "Tech2Globe",
     category: blog.category || "Blog",
     status: blog.status || "published",
