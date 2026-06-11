@@ -212,7 +212,7 @@ export default function Header() {
                 </div>
               </div>
             </div>
-            <a href="#" className="hover:text-[#c7010c]">BLOGS</a>
+            <Link href="/blog" className="hover:text-[#c7010c]">BLOGS</Link>
             <Link href="/contact-us" className="hover:text-[#c7010c]">CONTACT US</Link>
           </nav>
 
@@ -291,7 +291,7 @@ export default function Header() {
                   ))}
                 </div>
               </div>
-              <a href="#" onClick={() => setIsOpen(false)}>BLOGS</a>
+              <Link href="/blog" onClick={() => setIsOpen(false)}>BLOGS</Link>
               <Link href="/contact-us" onClick={() => setIsOpen(false)}>CONTACT US</Link>
             </nav>
           </div>

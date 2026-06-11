@@ -1,4 +1,5 @@
 import { Montserrat } from "next/font/google";
+import ChatWidget from "../components/ChatWidget";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -16,9 +17,11 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${montserrat.variable} h-full antialiased`}
+      style={{ colorScheme: "light" }}
     >
-      <body className={`${montserrat.className} min-h-full flex flex-col`}>
+      <body className={`${montserrat.className} min-h-full flex flex-col bg-white text-gray-900`}>
         {children}
+        <ChatWidget />
       </body>
     </html>
   );

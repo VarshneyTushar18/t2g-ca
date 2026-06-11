@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import BlogCard from "@/components/BlogCard";
+import { getRecentBlogs } from "@/lib/blogs";
 import FaqContact from "@/components/FaqContact";
 import ClientSlider from "@/components/ClientSlider";
 import ServiceCards from "@/components/ServiceCards";
@@ -333,30 +335,6 @@ const featuredServicesData = [
 ];
 
 
-const insightsData = [
-  {
-    id: 1,
-    title: "6 Advantages of Social Media Marketing Services",
-    excerpt: "Remember when everyone believed social media was a passing fad? Its strength has become evident, and it is just growing, with no end in sight...",
-    image: "/images/blogs/6-Reasons-blog.png",
-    link: "/blog/6-advantages-of-social-media-marketing-services"
-  },
-  {
-    id: 2,
-    title: "Top 5 Website Development Hacks You Need To Know",
-    excerpt: "Despite the fact that people spend a lot of time on their phones, web pages are still relevant! On the contrary, new CSS specifications and UX trends have...",
-    image: "/images/blogs/10-VS-4.jpg",
-    link: "/blog/top-5-website-development-hacks"
-  },
-  {
-    id: 3,
-    title: "Why Should I Hire A Digital Marketing Agency",
-    excerpt: "Are you truly getting the most out of your marketing efforts in this post-pandemic era? A rapidly transforming digital era has begun, and it necessitates a shifting manner...",
-    image: "/images/blogs/10-VS-2.jpg",
-    link: "/blog/why-should-i-hire-a-digital-marketing-agency"
-  }
-];
-
 const caseStudiesData = [
   {
     id: 1,
@@ -393,7 +371,9 @@ const caseStudiesData = [
   }
 ];
 
-export default function Home() {
+export default async function Home() {
+  const recentBlogs = await getRecentBlogs(3).catch(() => []);
+
   return (
     <main className="min-h-screen flex flex-col bg-white dark:bg-zinc-950">
       <Header />
@@ -902,39 +882,8 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {insightsData.map((post) => (
-              <div key={post.id} className="bg-white group transition-all duration-300 hover:shadow-xl flex flex-col h-full">
-                {/* Image Wrapper */}
-                <div className="relative h-54 overflow-hidden">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
-                </div>
-
-                {/* Content */}
-                <div className="p-8 flex flex-col flex-grow relative">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4 line-clamp-2 min-h-[3.5rem]">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 text-[15px] leading-relaxed mb-8 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-
-                  {/* Circular Link Button with Arrow */}
-                  <div className="mt-auto pt-6 border-t border-gray-100 flex justify-end">
-                    <a
-                      href={post.link}
-                      className="w-12 h-12 rounded-full border border-[#c7010c] text-[#c7010c] flex items-center justify-center transition-all duration-300 hover:bg-[#c7010c] hover:text-white group/btn"
-                    >
-                      <FiArrowUpRight size={20} className="transform transition-transform group-hover/btn:scale-110" />
-                    </a>
-                  </div>
-                </div>
-              </div>
+            {recentBlogs.map((blog) => (
+              <BlogCard key={blog.slug} blog={blog} />
             ))}
           </div>
         </div>

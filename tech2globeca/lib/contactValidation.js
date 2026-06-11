@@ -10,13 +10,9 @@ export const LIMITS = {
   pageUrlMax: 500,
 };
 
-export const COUNTRY_OPTIONS = [
-  "Canada (+1)",
-  "USA (+1)",
-  "UK (+44)",
-  "India (+91)",
-  "Australia (+61)",
-];
+import { COUNTRY_OPTIONS, COUNTRY_OPTION_SET } from "./countries.js";
+
+export { COUNTRY_OPTIONS };
 
 const EMAIL_REGEX =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
@@ -90,7 +86,7 @@ export function validateContactPayload(payload, { requireCountry = false } = {})
   if (requireCountry) {
     if (!country) {
       errors.country = "Please select a country.";
-    } else if (!COUNTRY_OPTIONS.includes(country)) {
+    } else if (!COUNTRY_OPTION_SET.has(country)) {
       errors.country = "Please select a valid country.";
     }
   }
