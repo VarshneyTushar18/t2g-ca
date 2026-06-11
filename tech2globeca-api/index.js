@@ -4,6 +4,7 @@ import {
   createMailTransporter,
   verifyMailConnection,
   getLeadEmails,
+  getTranscriptRecipientList,
 } from "./lib/mailer.js";
 import { verifyDbConnection } from "./lib/db.js";
 import { startPendingProcessor } from "./lib/elevenlabs/fallback/elevenlabs.fallback.service.js";
@@ -61,6 +62,18 @@ async function start() {
   app.listen(PORT, () => {
     console.log(`Mail API listening on http://localhost:${PORT}`);
     console.log("CORS allowed origins:", corsOrigins.join(", "));
+    const chatEnabled =
+      process.env.ELEVENLABS_API_KEY || process.env.ELEVENLABS_SECRET;
+    if (chatEnabled) {
+      const transcriptTo = getTranscriptRecipientList();
+      if (transcriptTo.length) {
+        console.log("Chat transcript emails will be sent to:", transcriptTo.join(", "));
+      } else {
+        console.warn(
+          "ELEVENLABS_TRANSCRIPT_EMAIL not set — chat transcripts cannot be emailed",
+        );
+      }
+    }
     if (process.env.ELEVENLABS_API_KEY) {
       startPendingProcessor();
     } else {

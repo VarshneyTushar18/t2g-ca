@@ -22,16 +22,23 @@ export function getSmtpFromAddress() {
   return (process.env.ELEVENLABS_FROM_EMAIL || process.env.SMTP_EMAIL || process.env.SMTP_USER || "").trim();
 }
 
+export function getTranscriptRecipientList() {
+  const raw = process.env.ELEVENLABS_TRANSCRIPT_EMAIL?.trim();
+  if (!raw) return [];
+  return raw
+    .split(",")
+    .map((e) => e.trim())
+    .filter(Boolean);
+}
+
 export function getTranscriptRecipients() {
-  const dedicated = process.env.ELEVENLABS_TRANSCRIPT_EMAIL;
-  if (dedicated) {
-    return dedicated
-      .split(",")
-      .map((e) => e.trim())
-      .filter(Boolean)
-      .join(",");
+  const list = getTranscriptRecipientList();
+  if (!list.length) {
+    throw new Error(
+      "ELEVENLABS_TRANSCRIPT_EMAIL is not set in .env (required for chat transcripts)",
+    );
   }
-  return getLeadEmails().join(",");
+  return list.join(",");
 }
 
 export function createMailTransporter() {
