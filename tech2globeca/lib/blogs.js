@@ -61,7 +61,18 @@ export function formatBlogAuthor(authorName) {
 }
 
 export function getBlogImage(blog) {
-  return blog.featuredImage || "/images/Banner-Tech2Globe.jpg";
+  const image = blog?.featuredImage;
+  if (!image) return "/images/Banner-Tech2Globe.jpg";
+
+  const proxied = image.replace(
+    /^https?:\/\/blog\.tech2globe\.ca\/wp-content\/uploads\//i,
+    "/blog-media/"
+  );
+  if (proxied.startsWith("/blog-media/") || proxied.startsWith("/images/")) {
+    return proxied;
+  }
+
+  return image;
 }
 
 export async function getBlogCategories() {
