@@ -92,6 +92,8 @@ const servicesData = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isPackagesOpen, setIsPackagesOpen] = useState(false);
+  const [isLocationOpen, setIsLocationOpen] = useState(false);
 
   return (
     <header className="w-full">
@@ -228,28 +230,34 @@ export default function Header() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden bg-gray-100 px-4 pb-4">
-            <nav className="flex flex-col gap-4 font-medium text-gray-700">
-              <Link href="/" onClick={() => setIsOpen(false)}>HOME</Link>
-              <Link href="/about-us" onClick={() => setIsOpen(false)}>ABOUT US</Link>
-              <div>
-                <p
-                  className="mb-2 flex items-center justify-between cursor-pointer"
+            <nav className="flex flex-col gap-4">
+              <Link href="/" onClick={() => setIsOpen(false)} className="font-semibold text-gray-800 hover:text-[#c7010c] transition-colors py-1">HOME</Link>
+              <Link href="/about-us" onClick={() => setIsOpen(false)} className="font-semibold text-gray-800 hover:text-[#c7010c] transition-colors py-1 border-b border-gray-200">ABOUT US</Link>
+              {/* Services Collapsible */}
+              <div className="border-b border-gray-200 pb-3">
+                <button
+                  type="button"
+                  className="w-full flex items-center justify-between cursor-pointer py-1 font-semibold text-gray-800 hover:text-[#c7010c] transition-colors"
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  aria-expanded={isServicesOpen}
                 >
-                  SERVICES <FaChevronDown className={`text-xs transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
-                </p>
-                {isServicesOpen && (
-                  <div className="ml-4 flex flex-col gap-6 border-l border-gray-300 pl-4 text-[12px] mt-2">
+                  SERVICES
+                  <FaChevronDown className={`text-xs transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <div
+                  style={{ maxHeight: isServicesOpen ? '1200px' : '0', overflow: 'hidden', transition: 'max-height 0.35s ease' }}
+                >
+                  <div className="ml-4 flex flex-col gap-5 border-l-2 border-[#c7010c] pl-4 text-[12px] mt-3 pb-1">
                     {servicesData.map((section, idx) => (
                       <div key={idx}>
-                        <p className="font-bold text-gray-800 mb-2 uppercase">{section.title}</p>
+                        <p className="font-bold text-gray-800 mb-2 uppercase tracking-wide text-[11px]">{section.title}</p>
                         <div className="flex flex-col gap-3">
                           {section.links.map((link, linkIdx) => (
                             <Link
                               key={linkIdx}
                               href={link.href}
-                              onClick={() => setIsOpen(false)}
-                              className="flex items-start gap-2 text-gray-600 hover:text-[#c7010c]"
+                              onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}
+                              className="flex items-start gap-2 text-gray-500 hover:text-[#c7010c] transition-colors"
                             >
                               {link.icon}
                               <span>{link.name}</span>
@@ -259,40 +267,69 @@ export default function Header() {
                       </div>
                     ))}
                   </div>
-                )}
-              </div>
-              <div>
-                <p className="mb-2">PACKAGES</p>
-                <div className="ml-4 flex flex-col gap-3 border-l border-gray-300 pl-4 text-[12px]">
-                  {packages.map((pkg) => (
-                    <Link
-                      key={pkg.href}
-                      href={pkg.href}
-                      onClick={() => setIsOpen(false)}
-                      className="hover:text-[#c7010c]"
-                    >
-                      {pkg.name}
-                    </Link>
-                  ))}
                 </div>
               </div>
-              <div>
-                <p className="mb-2">LOCATION</p>
-                <div className="ml-4 flex flex-col gap-3 border-l border-gray-300 pl-4 text-[12px]">
-                  {locations.map((location) => (
-                    <Link
-                      key={location.href}
-                      href={location.href}
-                      onClick={() => setIsOpen(false)}
-                      className="hover:text-[#c7010c]"
-                    >
-                      Digital Marketing {location.name}
-                    </Link>
-                  ))}
+
+              {/* Packages Collapsible */}
+              <div className="border-b border-gray-200 pb-3">
+                <button
+                  type="button"
+                  className="w-full flex items-center justify-between cursor-pointer py-1 font-semibold text-gray-800 hover:text-[#c7010c] transition-colors"
+                  onClick={() => setIsPackagesOpen(!isPackagesOpen)}
+                  aria-expanded={isPackagesOpen}
+                >
+                  PACKAGES
+                  <FaChevronDown className={`text-xs transition-transform duration-300 ${isPackagesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <div
+                  style={{ maxHeight: isPackagesOpen ? '600px' : '0', overflow: 'hidden', transition: 'max-height 0.35s ease' }}
+                >
+                  <div className="ml-4 flex flex-col gap-3 border-l-2 border-[#c7010c] pl-4 text-[12px] mt-3 pb-1">
+                    {packages.map((pkg) => (
+                      <Link
+                        key={pkg.href}
+                        href={pkg.href}
+                        onClick={() => { setIsOpen(false); setIsPackagesOpen(false); }}
+                        className="text-gray-500 hover:text-[#c7010c] transition-colors"
+                      >
+                        {pkg.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <Link href="/blog" onClick={() => setIsOpen(false)}>BLOGS</Link>
-              <Link href="/contact-us" onClick={() => setIsOpen(false)}>CONTACT US</Link>
+
+              {/* Location Collapsible */}
+              <div className="border-b border-gray-200 pb-3">
+                <button
+                  type="button"
+                  className="w-full flex items-center justify-between cursor-pointer py-1 font-semibold text-gray-800 hover:text-[#c7010c] transition-colors"
+                  onClick={() => setIsLocationOpen(!isLocationOpen)}
+                  aria-expanded={isLocationOpen}
+                >
+                  LOCATION
+                  <FaChevronDown className={`text-xs transition-transform duration-300 ${isLocationOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <div
+                  style={{ maxHeight: isLocationOpen ? '400px' : '0', overflow: 'hidden', transition: 'max-height 0.35s ease' }}
+                >
+                  <div className="ml-4 flex flex-col gap-3 border-l-2 border-[#c7010c] pl-4 text-[12px] mt-3 pb-1">
+                    {locations.map((location) => (
+                      <Link
+                        key={location.href}
+                        href={location.href}
+                        onClick={() => { setIsOpen(false); setIsLocationOpen(false); }}
+                        className="text-gray-500 hover:text-[#c7010c] transition-colors"
+                      >
+                        Digital Marketing {location.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <Link href="/blog" onClick={() => setIsOpen(false)} className="font-semibold text-gray-800 hover:text-[#c7010c] transition-colors py-1">BLOGS</Link>
+              <Link href="/contact-us" onClick={() => setIsOpen(false)} className="font-semibold text-gray-800 hover:text-[#c7010c] transition-colors py-1">CONTACT US</Link>
             </nav>
           </div>
         )}
