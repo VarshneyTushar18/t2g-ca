@@ -345,7 +345,7 @@ const caseStudiesData = [
       { label: "Online Leads", value: "+430%" }
     ],
     description: "Tech2Globe used SEO to increase the overall traffic to our Aquatech project website by +700% and along with the new CRO (Conversion rate optimization) focused Website were able to increase online leads by over +430%.",
-    link: "/case-study/seo-service-results"
+    link: "case-study-seo"
   },
   {
     id: 2,
@@ -356,7 +356,7 @@ const caseStudiesData = [
       { label: "Companies", value: "+500" }
     ],
     description: "Tech2Globe's data management experts can help you with our data entry services and lower your burden. They will scan and categorize the originals in order to convert physical documents into digital files.",
-    link: "/case-study/data-management-services"
+    link: "case-study-data-entry"
   },
   {
     id: 3,
@@ -367,7 +367,7 @@ const caseStudiesData = [
       { label: "Conversion", value: "+660%" }
     ],
     description: "Built up the goodwill on the online marketplace within the targeted date and client appreciated our efforts and a committed team with expertise were necessary to accomplish all tasks within TAT & deliver the assignment.",
-    link: "/case-study/ecommerce-market-places"
+    link: "case-study-ecommerce"
   }
 ];
 

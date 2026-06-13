@@ -33,7 +33,7 @@ const servicesData = [
       { name: "SEO Agency Toronto", href: "/seo-agency-toronto", icon: <FaSearch className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "PPC Management", href: "/ppc-management-services", icon: <FaMousePointer className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Local Seo", href: "/local-seo-services", icon: <FaMapMarkerAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
-      { name: "Social Media Marketing", href: "/social-media-marketing-services-services", icon: <FaTwitter className="text-gray-400 mt-1 flex-shrink-0" /> },
+      { name: "Social Media Marketing", href: "/social-media-marketing-services", icon: <FaTwitter className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Influencer Marketing", href: "/influencer-marketing-services", icon: <FaBullhorn className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Content Marketing", href: "/content-marketing-services", icon: <FaPen className="text-gray-400 mt-1 flex-shrink-0" /> },
     ]
@@ -54,7 +54,7 @@ const servicesData = [
       { name: "Medical Data Entry", href: "/medical-data-entry-services", icon: <FaFileAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Restaurant Data Entry", href: "/restaurant-menu-data-entry-services", icon: <FaFileAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Logistic & Transportation", href: "/logistic-transportation", icon: <FaFileAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
-      { name: "Financial And Accounting Services", href: "/financial-accounting-services", icon: <FaFileAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
+      { name: "Financial And Accounting Services", href: "/financial-accounting", icon: <FaFileAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Customer Onboarding Services", href: "/customer-onboarding-services", icon: <FaFileAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Customer Data Migration Services", href: "/customer-data-migration-services", icon: <FaFileAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Project Implementation Services", href: "/project-implementation-services", icon: <FaFileAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
@@ -72,7 +72,7 @@ const servicesData = [
     links: [
       { name: "Amazon Marketing", href: "/amazon-marketing-services", icon: <FaCommentAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Amazon Consulting", href: "/amazon-consulting-services", icon: <FaCommentAlt className="text-gray-400 mt-1 flex-shrink-0" /> },
-      { name: "Amazon FBA Consulting", href: "/amazon-fba-consulting-services-services", icon: <FaUser className="text-gray-400 mt-1 flex-shrink-0" /> },
+      { name: "Amazon FBA Consulting", href: "/amazon-fba-consulting-services", icon: <FaUser className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Amazon Seo Consultant", href: "/amazon-seo-consultant", icon: <FaSearch className="text-gray-400 mt-1 flex-shrink-0" /> },
       { name: "Amazon Ad Management", href: "/amazon-advertising-management", icon: <FaAd className="text-gray-400 mt-1 flex-shrink-0" /> },
     ]

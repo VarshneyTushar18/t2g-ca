@@ -266,33 +266,6 @@ const clientsData3 = [
 ];
 
 
-const stats = [
-  {
-    id: 1,
-    icon: FaSmile,
-    value: "18+",
-    label: "YEARS EXPERIENCE",
-  },
-  {
-    id: 2,
-    icon: FaLayerGroup,
-    value: "7K+",
-    label: "PROJECT COMPLETED",
-  },
-  {
-    id: 3,
-    icon: FaGlobe,
-    value: "40+",
-    label: "COUNTRIES CLIENTS",
-  },
-  {
-    id: 4,
-    icon: FaComments,
-    value: "50+",
-    label: "GLOBAL CUSTOMERS",
-  },
-];
-
 
 export default function FinancialAccounting() {
   return (
@@ -310,23 +283,129 @@ export default function FinancialAccounting() {
 
       <ClientSlider title="Awards & Recognition" clients={clientsData3} />
 
-      <section className="py-16 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center gap-10">
+      <section className="py-8 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10">
 
 
-          <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-3">
-            Best Customer Data Migration Services
-          </h3>
-          <div className="w-16 h-[3px] bg-[#c7010c] mb-3 mx-auto"></div>
-          <p className="text-gray-600 mb-3 leading-relaxed text-center">Our professionals can assist you if you require a speedy, effective, and secure data moving service!<br />
-            Customer data migration services involve transferring customer data from one system or platform to another. This is often necessary when a business is switching to a new system or platform, or when it is merging with another company and needs to combine customer data from both systems. Customer data migration services can include transferring a wide range of data, including:</p>
+          <div className="w-full md:w-1/2">
+            <div>
+              {/* Placeholder for the team image shown in the screenshot */}
+              <img
+                src="/images/services/account.webp"
+                alt="Financial And Accounting Data Entry Services"
+                className="rounded-lg overflow-hidden img-fluid"
+              />
+            </div>
+          </div>
 
+          <div className="w-full md:w-3/4">
+            <h4 className="text-2xl md:text-3xl font-semibold  mb-3">
+              Financial And Accounting Data Entry Services
+            </h4>
+            <div className="w-16 h-[3px] bg-[#c7010c] mb-3"></div>
+            <p className=" mb-8 leading-relaxed">
+              Financial and accounting data entry services Toronto are essential for businesses, organisations, and individuals looking to effectively manage their financial information and make informed financial decisions. These services cover a wide range of tasks and activities related to financial management, including bookkeeping, tax preparation and filing, financial planning and consulting, auditing, budgeting and forecasting, and financial reporting. Whether you are a small business owner, a non-profit organisation, or an individual with personal financial goals, financial data entry service Canada can help you better understand your financial situation, identify opportunities and challenges, and develop strategies to achieve your financial objectives.
+            </p>
+          </div>
+
+
+
+        </div>
+      </section>
+
+      <section className="py-8 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10">
+
+          <div className="w-full md:w-3/4">
+            <h4 className="text-2xl md:text-3xl font-semibold  mb-3">
+              Leave The Tedious Task Of Financial Data Entry To Us And Focus On Driving Your Business Forward
+            </h4>
+            <div className="w-16 h-[3px] bg-[#c7010c] mb-3"></div>
+            <p className=" mb-8 leading-relaxed">
+              If you are considering financial data entry outsourcing, it is important to choose a provider that has the expertise, experience, and resources to meet your specific needs. We are the top providers offering a range of services, from basic bookkeeping to advanced financial planning and analysis, and that has a proven track record of helping clients succeed. By partnering with our reputable financial and accounting service provider, you can gain access to the tools, insights, and guidance you need to make informed financial decisions and achieve your financial goals.
+            </p>
+          </div>
+
+          <div className="w-full md:w-1/2">
+            <div>
+              {/* Placeholder for the team image shown in the screenshot */}
+              <img
+                src="/images/services/drive.webp"
+                alt="Leave The Tedious Task Of Financial Data Entry To Us And Focus On Driving Your Business Forward"
+                className="rounded-lg overflow-hidden img-fluid"
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <section className="py-8 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10">
+
+
+          <div className="w-full md:w-1/2">
+            <div>
+              {/* Placeholder for the team image shown in the screenshot */}
+              <img
+                src="/images/services/data.webp"
+                alt="Streamline Your Financial Processes And Save Valuable Time With Our Data Entry Services By Tech2Globe"
+                className="rounded-lg overflow-hidden img-fluid"
+              />
+            </div>
+          </div>
+
+          <div className="w-full md:w-3/4">
+            <h4 className="text-2xl md:text-3xl font-semibold  mb-3">
+              Streamline Your Financial Processes And Save Valuable Time With Our Data Entry Services By Tech2Globe
+            </h4>
+            <div className="w-16 h-[3px] bg-[#c7010c] mb-3"></div>
+            <p className=" mb-8 leading-relaxed">
+              If you’re considering financial data entry outsourcing services to Tech2Globe, there are several key factors you should consider. First and foremost, you’ll want to look for a provider that has a proven track record of success in the industry. This includes a history of happy clients, a strong reputation, and a demonstrated ability to deliver high-quality results. You’ll also want to look for a provider that has a wide range of services and capabilities. Fortunately, Tech2Globe can help you with all this. Tech2Globe offers a range of financial and accounting data entry services Toronto, including bookkeeping, tax preparation and filing, financial planning and consulting, auditing, budgeting and forecasting, and financial reporting. This ensures that you’ll be able to find a solution that meets your specific needs. We are a team of experts that is reliable, responsive, and easy to work with. Tech2Globe prides itself on its customer service and is dedicated to ensuring that its clients are satisfied with the services it provides. Finally, it’s important to choose a provider that is affordable and offers value for money. Tech2Globe offers competitive pricing and works with its clients to develop customized solutions that meet their specific budget constraints.
+            </p>
+          </div>
+
+
+
+        </div>
+      </section>
+
+      <section className="py-8 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10">
+
+
+          <div className="w-full md:w-3/4">
+            <h4 className="text-2 md:text-3xl font-semibold  mb-3">
+              The Goals We Stick To While Providing You Our Accounting Data Entry Services Toronto:
+            </h4>
+            <div className="w-16 h-[3px] bg-[#c7010c] mb-3"></div>
+            <p className=" mb-8 leading-relaxed">
+              At Tech2Globe, we understand that accurate and timely financial data is crucial for the success of any business. That's why we offer a range of financial data entry outsourcing services to help our clients streamline their financial processes and make informed decisions. Our team of skilled professionals is trained to handle a wide range of financial tasks, including accounting data entry services , bookkeeping, accounts payable and receivable, payroll, and more. We use advanced tools and technologies to ensure that all of our work is accurate and up-to-date, and we are committed to providing the highest level of financial data entry service Canada to our clients.
+            </p>
+          </div>
+
+          <div className="w-full md:w-1/2">
+            <div>
+              {/* Placeholder for the team image shown in the screenshot */}
+              <img
+                src="/images/services/Toronto.webp"
+                alt="The Goals We Stick To While Providing You Our Accounting Data Entry Services Toronto:"
+                className="rounded-lg overflow-hidden img-fluid"
+              />
+            </div>
+          </div>
 
         </div>
       </section>
 
       <section className="py-16 bg-[#f7f7f7] overflow-hidden">
         <div className="container mx-auto px-4 max-w-7xl">
+
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 text-center mb-3">
+            When outsourcing your accounting data entry services to Tech2Globe, you can expect:
+          </h2>
+          <div className="w-16 h-[3px] bg-[#c7010c] mb-8 mx-auto"></div>
 
 
           {/* Feature cards */}
@@ -337,9 +416,9 @@ export default function FinancialAccounting() {
               <div className="w-[88px] h-[88px] rounded-full bg-[#f0f0f0] flex items-center justify-center mb-5 transition-colors duration-300 group-hover:bg-[#c7010c]">
                 <FiUsers className="text-[#c7010c] text-[2rem] transition-colors duration-300 group-hover:text-white" />
               </div>
-              <h3 className="text-[#222] text-[16px] font-semibold">Customer contact information</h3>
+              <h3 className="text-[#222] text-[16px] font-semibold">Professional and efficient service</h3>
               <p className="text-[#666666] text-[14px] leading-[1.8] ">
-                It includes gathering names, addresses, phone numbers, and email addresses.
+                Our team is highly trained and experienced in financial data entry outsourcing, and we take pride in our attention to detail and ability to meet tight deadlines.
               </p>
             </div>
 
@@ -347,9 +426,9 @@ export default function FinancialAccounting() {
               <div className="w-[88px] h-[88px] rounded-full bg-[#f0f0f0] flex items-center justify-center mb-5 transition-colors duration-300 group-hover:bg-[#c7010c]">
                 <FiUserPlus className="text-[#c7010c] text-[2rem] transition-colors duration-300 group-hover:text-white" />
               </div>
-              <h3 className="text-[#222] text-[16px] font-semibold">Customer account information</h3>
+              <h3 className="text-[#222] text-[16px] font-semibold">Customised solutions</h3>
               <p className="text-[#666666] text-[14px] leading-[1.8] ">
-                Login credentials, account preferences, and any other information related to the customer's account.
+                We understand that every business is unique, and we will work with you to develop customized solutions that meet your specific needs.
               </p>
             </div>
 
@@ -357,9 +436,9 @@ export default function FinancialAccounting() {
               <div className="w-[88px] h-[88px] rounded-full bg-[#f0f0f0] flex items-center justify-center mb-5 transition-colors duration-300 group-hover:bg-[#c7010c]">
                 <FiRefreshCcw className="text-[#c7010c] text-[2rem] transition-colors duration-300 group-hover:text-white" />
               </div>
-              <h3 className="text-[#222] text-[16px] font-semibold">Customer transaction history</h3>
+              <h3 className="text-[#222] text-[16px] font-semibold">Secure and confidential handling of your data</h3>
               <p className="text-[#666666] text-[14px] leading-[1.8] ">
-                Information about past orders, returns, and refunds.
+                We take the security and confidentiality of your financial information very seriously and use advanced security measures to protect it.
               </p>
             </div>
 
@@ -367,178 +446,14 @@ export default function FinancialAccounting() {
               <div className="w-[88px] h-[88px] rounded-full bg-[#f0f0f0] flex items-center justify-center mb-5 transition-colors duration-300 group-hover:bg-[#c7010c]">
                 <FiFileText className="text-[#c7010c] text-[2rem] transition-colors duration-300 group-hover:text-white" />
               </div>
-              <h3 className="text-[#222] text-[16px] font-semibold">Customer loyalty program data</h3>
+              <h3 className="text-[#222] text-[16px] font-semibold">Increased efficiency and accuracy</h3>
               <p className="text-[#666666] text-[14px] leading-[1.8] ">
-                Insights about a customer's loyalty points or rewards, as well as any other data related to the program.
+                By outsourcing your accounting tasks to Tech2Globe, you can free up time and resources to focus on other areas of your business while still ensuring that your financial data is accurate and up-to-date.
               </p>
             </div>
 
 
           </div>
-        </div>
-      </section>
-
-
-      <section className="bg-[#c7010c] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 
-          py-[1.2rem] sm:py-[1.6rem] md:py-[1.6rem] lg:py-[1.6rem]">
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 
-                    gap-6 md:gap-8">
-
-            {stats.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <div
-                  key={item.id}
-                  className="flex items-center justify-center md:justify-start gap-3"
-                >
-                  {/* Icon */}
-                  <Icon className="text-xl sm:text-2xl md:text-3xl flex-shrink-0" />
-
-                  {/* Content */}
-                  <div className="text-left">
-                    <h3 className="font-semibold 
-                             text-lg sm:text-xl md:text-2xl leading-tight">
-                      {item.value}
-                    </h3>
-
-                    <p className="text-[10px] sm:text-xs md:text-sm 
-                            tracking-wide leading-snug">
-                      {item.label}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-
-          </div>
-        </div>
-      </section>
-
-
-
-
-      <section className="py-16 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-[#222222] mb-4">
-              Tech2Globe Provide Customised Migrations From Any<br />
-              Source To Any Target
-            </h2>
-            <div className="w-24 h-[2px] bg-[#c7010c] mx-auto mb-4"></div>
-            <p>Experience seamless data migration with our customer-centric approach</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
-            <div className="flex flex-col">
-              <h3 className="text-xl font-bold text-[#c7010c] mb-4">
-                Create Strategies
-              </h3>
-              <p className="text-[#555555] leading-relaxed text-[15px] md:text-[16px] font-normal flex-grow">
-                We solve your specific archive difficulties and offer cost-effective data migration services.
-              </p>
-              <div className="w-12 h-[3px] bg-[#c7010c] mt-6"></div>
-            </div>
-
-            <div className="flex flex-col">
-              <h3 className="text-xl font-bold text-[#c7010c] mb-4">
-                Improve Outcomes
-              </h3>
-              <p className="text-[#555555] leading-relaxed text-[15px] md:text-[16px] font-normal flex-grow">
-                We assist you in determining which target archives will best fulfil your specific data compliance requirements.
-              </p>
-              <div className="w-12 h-[3px] bg-[#c7010c] mt-6"></div>
-            </div>
-
-            <div className="flex flex-col">
-              <h3 className="text-xl font-bold text-[#c7010c] mb-4">
-                Migrate With Confidence
-              </h3>
-              <p className="text-[#555555] leading-relaxed text-[15px] md:text-[16px] font-normal flex-grow">
-                We provide you with flexibility and control, as well as a comprehensive chain of custody until the task is completed.
-              </p>
-              <div className="w-12 h-[3px] bg-[#c7010c] mt-6"></div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section className="workflow-section">
-        <div className="workflow-overlay"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 workflow-container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
-              Data Migration Services Process We Follow With Proven Track Record
-            </h2>
-            <div className="w-24 h-[2px] bg-[#c7010c] mx-auto mb-6"></div>
-            <p className="text-gray-300 max-w-3xl mx-auto leading-relaxed text-[15px] md:text-[16px]">
-              When it comes to assisting enterprises with their data migration difficulties, our database migration services professionals offer unparalleled expertise.
-            </p>
-          </div>
-
-          <div className="workflow-grid">
-            <div className="workflow-card">
-              <span className="workflow-number">01.</span>
-              <h3 className="workflow-title">Planning</h3>
-              <p className="workflow-desc">
-                The first step in the database migration services is to carefully plan out the migration. We involve identifying the specific data that needs to be migrated, assessing the current system and the new system to ensure compatibility, and developing a timeline for the migration.
-              </p>
-            </div>
-
-            <div className="workflow-card">
-              <span className="workflow-number">02.</span>
-              <h3 className="workflow-title">Data Preparation</h3>
-              <p className="workflow-desc">
-                The next step is to prepare the data for migration. We clean and organise the data, ensuring that it is in a format that is compatible with the new system, and verifying the accuracy and completeness of the data.
-              </p>
-            </div>
-
-            <div className="workflow-card">
-              <span className="workflow-number">03.</span>
-              <h3 className="workflow-title">Data Transfer</h3>
-              <p className="workflow-desc">
-                Once the data is prepared, the actual transfer of the data from the old system to the new system can take place. We use specialised tools or software to facilitate the transfer, or it may involve manually entering the data into the new system.
-              </p>
-            </div>
-
-            <div className="workflow-card">
-              <span className="workflow-number">04.</span>
-              <h3 className="workflow-title">Data Validation</h3>
-              <p className="workflow-desc">
-                After the data has been transferred by our data migration services, it is important to validate that all of the data has been transferred correctly and that the data is accurate and complete. We compare the data in the old system to the data in the new system, or run tests to ensure that the data is being used correctly in the new system.
-              </p>
-            </div>
-
-            <div className="workflow-card">
-              <span className="workflow-number">05.</span>
-              <h3 className="workflow-title">Data Cleanup</h3>
-              <p className="workflow-desc">
-                Depending on the complexity of the data being migrated, there may be some cleanup work that needs to be done after the migration is complete. We at Tech2Globe do it by removing any duplicate or unnecessary data, or making sure that all of the data is properly organised and structured in the new system.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-
-      <section className="py-16 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center gap-10">
-
-
-          <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-3">
-            Partner With Tech2Globe For Efficient Database Migration Services
-          </h3>
-          <div className="w-16 h-[3px] bg-[#c7010c] mb-3 mx-auto"></div>
-          <p className="text-gray-600 mb-3 leading-relaxed text-center">Ensure a smooth customer experience during data migration with our specialised services!<br />
-            Tech2Globe Canada offers a comprehensive database migration service, supported by both in-house expertise and a track record of delivering multi-industry projects. With project teams composed of data migration business professionals, data migration profiling consultants, data migration project managers, data migration architects, data migration ETL developers, and data quality specialists, our data migration experts can provide the necessary expertise.<br />
-            Fill out the form, email us at info@tech2globe.com, or call us now to get started on your next data migration project.</p>
-
-
         </div>
       </section>
 

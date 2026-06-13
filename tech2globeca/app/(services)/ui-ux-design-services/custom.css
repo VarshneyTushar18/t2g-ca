@@ -1,0 +1,100 @@
+.portfolioSection {
+    padding: 60px 20px;
+}
+
+.portfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.gridItem {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.gridItem:hover {
+    transform: translateY(-5px);
+}
+
+.portfolioImg {
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolioIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 15px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.portfolioImg:hover .portfolioIcon {
+    opacity: 1;
+}
+
+.portfolioIcon a {
+    width: 42px;
+    height: 42px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.portfolioIcon a:hover {
+    background: #000;
+    color: #fff;
+}
+
+figcaption {
+    padding: 18px;
+    text-align: center;
+}
+
+figcaption span {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+    .portfolioGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolioGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Our Design Process Cards */
+.design-process-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.design-process-card:hover {
+    transform: translateY(-4px);
+    box-shadow: -4px 0 0 0 #c7010c, 0 8px 30px rgba(0, 0, 0, 0.4);
+}
